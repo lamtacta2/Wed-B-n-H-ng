@@ -1,0 +1,1393 @@
+
+<!DOCTYPE html>
+<html lang="vi" class="loading-site no-js">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",e=>{this.persisted=e.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(e){if(document.hidden){e._triggerListener();return}this.triggerEvents.forEach(t=>window.addEventListener(t,e.userEventHandler,{passive:!0})),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(e=>window.removeEventListener(e,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(e=>{this._isClickPending?this._pendingClickFinished=e:e()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(e,t,i){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(i,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{if(t.hasAttribute("src")){let i=new URL(t.src).origin;i!==location.origin&&e.push({src:i,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}}),e=[...new Map(e.map(e=>[JSON.stringify(e),e])).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){console.error(e)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{e.hasAttribute("data-rocket-src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)})}async _transformScript(e){return await this._littleBreath(),new Promise(t=>{function i(){e.setAttribute("data-rocket-status","executed"),t()}function r(){e.setAttribute("data-rocket-status","failed"),t()}try{let n=e.getAttribute("data-rocket-type"),s=e.getAttribute("data-rocket-src");if(n?(e.type=n,e.removeAttribute("data-rocket-type")):e.removeAttribute("type"),e.addEventListener("load",i),e.addEventListener("error",r),s)e.src=s,e.removeAttribute("data-rocket-src");else if(navigator.userAgent.indexOf("Firefox/")>0){var a=document.createElement("script");[...e.attributes].forEach(e=>{"type"!==e.nodeName&&a.setAttribute("data-rocket-type"===e.nodeName?"type":e.nodeName,e.nodeValue)}),a.text=e.text,e.parentNode.replaceChild(a,e),i()}else e.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(e.text)))}catch(o){r()}})}async _loadScriptsFromList(e){let t=e.shift();return t&&t.isConnected?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var i=document.createDocumentFragment();e.forEach(e=>{let r=e.getAttribute&&e.getAttribute("data-rocket-src")||e.src;if(r){let n=document.createElement("link");n.href=r,n.rel=t,"preconnect"!==t&&(n.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),e.crossOrigin&&(n.crossOrigin=e.crossOrigin),e.integrity&&(n.integrity=e.integrity),i.appendChild(n),this.trash.push(n)}}),document.head.appendChild(i)}_delayEventListeners(e){let t={};function i(e,i){!function e(i){!t[i]&&(t[i]={originalFunctions:{add:i.addEventListener,remove:i.removeEventListener},eventsToRewrite:[]},i.addEventListener=function(){arguments[0]=r(arguments[0]),t[i].originalFunctions.add.apply(i,arguments)},i.removeEventListener=function(){arguments[0]=r(arguments[0]),t[i].originalFunctions.remove.apply(i,arguments)});function r(e){return t[i].eventsToRewrite.indexOf(e)>=0?"rocket-"+e:e}}(e),t[e].eventsToRewrite.push(i)}function r(e,t){let i=e[t];Object.defineProperty(e,t,{get:()=>i||function(){},set(r){e["rocket"+t]=i=r}})}i(document,"DOMContentLoaded"),i(window,"DOMContentLoaded"),i(window,"load"),i(window,"pageshow"),i(document,"readystatechange"),r(document,"onreadystatechange"),r(window,"onload"),r(window,"onpageshow")}_delayJQueryReady(e){let t;function i(i){if(i&&i.fn&&!e.allJQueries.includes(i)){i.fn.ready=i.fn.init.prototype.ready=function(t){return e.domReadyFired?t.bind(document)(i):document.addEventListener("rocket-DOMContentLoaded",()=>t.bind(document)(i)),i([])};let r=i.fn.on;i.fn.on=i.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map(e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]})}return r.apply(this,arguments),this},e.allJQueries.push(i)}t=i}i(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>t,set(e){i(e)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(e=>e(window).trigger("rocket-jquery-load")),await this._littleBreath();let e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let e=new Map;document.write=document.writeln=function(t){let i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+t);let r=document.createRange(),n=i.parentElement,s=e.get(i);void 0===s&&(s=i.nextSibling,e.set(i,s));let a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(e=>setTimeout(e)):new Promise(e=>requestAnimationFrame(e))}_emptyTrash(){this.trash.forEach(e=>e.remove())}static run(){let e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+	<link rel="pingback" href="https://givasolar.com/xmlrpc.php" />
+
+	<script type="rocketlazyloadscript">(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- This site is optimized with the Yoast SEO Premium plugin v20.2.1 (Yoast SEO v21.5) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Đèn LED Năng Lượng Mặt Trời Cao Cấp Giá Rẻ 2023</title>
+	<link rel="canonical" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/" />
+	<link rel="next" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/page/2/" />
+	<meta property="og:locale" content="vi_VN" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Lưu trữ Đèn năng lượng mặt trời" />
+	<meta property="og:description" content="Đèn LED năng lượng mặt trời (Solar LED light) là thiết bị chiếu sáng từ phát minh tiên tiến của nhân loại, ra đời dựa trên nhiều ứng dụng liên ngành khác nhau. Từ khi công nghệ LED (tính đến năm 2016 đèn led chỉ sử dụng khoảng 10% lượng điện so với đèn sợi đốt) và năng lượng mặt trời ứng dụng Công nghệ PV phát triển từ năm 1990) thay thế cho đèn dầu, nến và đèn điện cũ… vì thế mà đưa dòng sản phẩm đèn led chiếu sáng từ ánh sáng mặt trời phát triển lên một tầm cao mới và ứng dụng rộng rãi vào đời sống hiện nay. Đây được xem là một trong số nguồn chiếu sáng tiết kiệm năng lượng nhất trên hành tinh. Đèn LED năng lượng mặt trời gồm những bộ phận gì? Đèn khá đa dạng mẫu mã, được thiết kế đơn giản với nhiều bộ phận chính như tấm pin năng lượng mặt trời, cảm biến ánh sáng, mạch điều khiển, pin sạc, thân đèn, công tắc… với nhiều tính năng thông minh hiện đại, giúp đèn cung cấp ánh sáng cho không gian ngoài trời của gia đình.1 Tấm pin thu năng lượng mặt trời: Được làm từ tế bào silicon tinh thể, một vật liệu bán dẫn. Khi dòng các hạt ánh sáng mặt trời gọi là photon đi vào, chúng sẽ nhường năng lượng cho các nguyên tử trong silicon, tác động lên các electron để tạo ra dòng điện. Nhiều ánh sáng chiếu qua, nhiều electron di chuyển xung quanh do đó tạo nhiều dòng chảy. Quá trình này được gọi là hiệu ứng quang điện. Solar panel là thành phần chính và quan trọng nhất là tập hợp nhiều tế bào quang điện, có khả năng hấp thu ánh sáng từ mặt trời và chuyển đổi thành năng lượng điện cung cấp cho đèn. Thường được lắp đặt bên trên cùng của đèn để có thể hấp thu được nhiều ánh sáng mặt trời hơn, tấm pin solar có tuổi thọ khá dài, từ 20-25 năm, được làm với chất liệu silicon tinh khiết, khả năng chống thấm tốt, có thể chịu đựng dưới mọi thời tiết khắc nghiệt của Việt Nam. Pin sạc – Battery Pin bên trong đèn LED năng lượng thường sử dụng công nghệ điện phân gel với hiệu suất cao trong việc xả sâu, để cho phép sử dụng trong phạm vi nhiệt độ khắc nghiệt. Nó cũng có thể sử dụng axit chì, niken cadmium hoặc lithium. Bộ phận này của đèn giúp lưu trữ năng lượng thu được từ tấm pin và cung cấp năng lượng cho đèn mặt trời sẽ chiếu sáng vào ban đêm. Mạch điều khiển – Controller Đây là bộ phận quan trọng dùng để ngắt dòng điện khi phát hiện pin đã được sạc đầy, từ đó phòng tránh pin sạc vượt mức, gây nổ. Controller còn đồng thời ngăn không cho dòng điện từ pin sạc chạy ngược lại làm hư tấm pin. Đèn Led: Đây là bóng đèn chiếu sáng của đèn, đèn led với các Diode phát sáng với hiệu quả phát sáng cao và tuổi thọ cao. Dưới sự điều khiển của bộ điều khiển sạc DC, cảm biến hồng ngoại sẽ tự động bật đèn khi trời tối và tắt vào ban ngày. Cảm biến ánh sáng – sensor light Thường có trong những loại đèn đường và đèn treo tường, Sensor light là thành phần thông minh, có khả năng nhận biết ánh sáng để phát tín hiệu cho đèn tắt và vào trời tối thì tự động bật và phát ra ánh sáng. Nhờ có tính năng này mà đèn chạy năng lượng mặt trời không cần phải chịu sự tác động của con người. Thân đèn: Tùy theo loại đèn mà có chất liệu thân đèn khác nhau như: nhôm mạ đồng, nhôm sơn tĩnh điện, thép không rỉ, hợp kim nhôm…vô cùng chất lượng, có độ bền và khả năng chống thấm nước tốt. Công tắc trên đèn Trên mỗi loại đèn đều được trang bị một công tắc ở nhiều vị trí khác nhau, đa số là trên thân đèn, dùng để bật hay tắt nguồn của đèn khi không sử dụng nữa hay bật lúc mới lắp đặt. Nguyên lý hoạt động của đèn tích điện năng lượng mặt trời Nguyên lý hoạt động chung của các loại đèn chạy bằng năng lượng mặt trời: Vào ban ngày, pin mặt trời sẽ đóng vai trò thu năng lượng mặt trời, chuyển đổi tia nắng mặt trời thành điện năng, sau đó được lưu trữ trong pin. Vào ban đêm, điện trở quang phát hiện sự thiếu sáng và bật đèn. Sau đó, đèn vẫn sáng cho đến khi hết pin hoặc điện trở quang phát hiện ánh sáng trở lại vào buổi sáng. Lợi ích khi sử dụng đèn LED năng lượng mặt trời: Sử dụng nguồn năng lượng tái tạo vô tận, xanh, sạch và bền vững từ thiên nhiên, đây là một trong các dạng năng lượng thay thế được khuyến khích sử dụng để bảo vệ môi trường. Chi phí tiền điện hàng tháng là 0 đồng Rất dễ lắp đặt đèn năng lượng mặt trời, nó khá đơn giản vì đặc thù của nó là không cần đến dây điện Vận hành thông minh: có thể tự động chiếu sáng khi vào buổi tối và sạc điện tự động nhờ tấm pin hấp thụ ánh sáng mặt trời vào ban ngày. Có độ bền cao, khả năng chống thấm nước, chịu được mọi thời tiết khắc nghiệt như mưa, bão, gió, ánh nắng gay gắt… Kiểu dáng đa dạng và phong phú cùng nhiều ánh sáng đẹp mắt, đèn led mặt trời dùng cho chiếu sáng và cả với mục đích trang trí cho cảnh quan khu vườn nhà bạn thêm lung linh, hấp dẫn. Ứng dụng của đèn sử dụng năng lượng mặt trời: Được ứng dụng trong chiếu sáng và cả mục đích trang trí cho mọi khu vực ngoài trời: chiếu sáng sân vườn, chiếu sáng đường nông thôn hay thành thị, chiếu sáng cổng, chiếu sáng tường nhà, lối đi, cầu thang… cho nhà ở, công viên, công ty, nhà xưởng, trung tâm mua sắm, cửa hàng, quán cafe, chiếu sáng công cộng… Ngoài chiếu sáng thì chúng còn được sử dụng với mục đích trang trí, mang đến thẩm mỹ cho không gian sân vườn, lối đi…Hay chúng còn sử dụng với mục đích an ninh với loại đèn có cảm biến chuyển động (bật sáng độ sáng tối đa khi có người đến gần) Công nghệ này là một giải pháp chiếu sáng thông minh hiện nay nhằm tiết kiệm chi phí &amp; bảo vệ môi tường… Địa chỉ bán đèn sân vườn năng lượng mặt trời tốt nhất dành cho bạn: Địa chỉ bán đèn năng lượng mặt trời chiếu sáng ngoài trời tốt nhất và uy tín nhất trên thị trường hiện nay chính là GivaSolar với nhiều mẫu mã có chất lượng vượt trội. Các mẫu đèn của chúng tôi đã được thông qua quy trình kiểm tra nghiêm ngặt, đạt tiêu chuẩn an toàn quốc tế. Có thời gian bảo hành uy tín, đảm bảo sẽ thực hiện chính sách tốt nhất mang lại nhiều lợi ích cho quý khách hàng. Đa dạng mẫu mã nhất hiện nay trên thị trường Có giá và chính sách tốt dành cho đại lý Có hệ thống cửa hàng phân phối rộng khắp ở HCM, Vũng Tàu, Cần Thơ… Nhận lắp đặt hệ thống đèn và trụ đèn chiếu sáng chạy điện mặt trời, có chính sách hỗ trợ quá trình bảo dưỡng, bảo trì, nâng cấp, cải tiến hệ thống chiếu sáng cho quý khách có nhu cầu… Thận trọng khi mua các loại đèn chiếu sáng năng lượng mặt trời giá siêu rẻ: GIVASOLAR​ đồng hành với chương trình CHUYỂN ĐỘNG ĐA CHIỀU trên kênh VTV9, Bàn luận về chủ đề “Thận trọng với những mẫu đèn giá siêu rẻ” Hiện nay, trên thị trường tràn ngập các sản phẩm đèn mặt trời với mức giá rẻ chỉ bằng 1/3, 1/4 so với các sản phẩm có cùng thông số đến từ các cung cấp uy tín. Để sản làm ra các sản phẩm này các nhà sản xuất thường cắt giảm chất lượng các linh kiện bên trong, khiến chúng rất nhanh xuống cấp, các tấm pin được dùng thường chỉ là loại D hiệu suất kém. Đặc biệt, đối với bộ phận pin lưu trữ chất lượng kém tiềm ẩn nhiều nguy cơ về an toàn. https://www.youtube.com/watch?v=UomqX0UlsF4 + Tại Givasolar khách hàng không phải để tìm mẫu đèn giá siêu rẻ mà là TÌM MỘT SẢN PHẨM GIÁ RẺ HƠN CHẤT LƯỢNG CỦA NÓ. + Chúng tôi mang đến cho thị trường nhiều mẫu mã đèn dùng năng lượng mặt trời để chiếu sáng cho gia đình hay các dự án chiếu sáng vừa bền, đẹp, nhưng có mức giá tốt. Vì vậy, chúng tôi chỉ lựa chọn cung cấp các sản phẩm an toàn, chất lượng, cùng với chế độ bảo hành từ công ty. Tuyệt đối nói KHÔNG với các loại đèn kém chất lượng. Showroom bán đèn LED năng lượng mặt trời tại TPHCM của GivaSolar: https://www.youtube.com/watch?v=2dJDKe0zpEA   Cách chọn mua đèn LED năng lượng mặt trời tốt nhất: Có bao giờ bạn bỏ ra một khoảng tiền lớn để mua một sản phẩm mà chưa tìm hiểu qua về nó. Hãy là một người tiêu dùng thông minh, trước khi quyết định mua một sản phẩm nào, bạn cũng cần đặt ra một vài câu hỏi liên quan đến sản phẩm đó để ra quyết định mua tốt nhất. 1. Mục đích sử dụng đèn: Một trong những điều đầu tiên mà bạn cần hiểu và cân nhắc là bạn sẽ sử dụng đèn cho mục đích gì. Tùy thuộc vào mục đích, như chúng ta đã thấy, có nhiều loại đèn chiếu sáng năng lượng mặt trời để bạn chọn cho phù hợp. Ví dụ, nếu bạn cần đèn an ninh, bạn có đèn có cảm biến chuyển động cơ bản. Nhưng nếu bạn cần một cái gì đó có thẩm mỹ có thể chọn loại đèn treo, đèn lửa… 2. Chọn pin lưu trữ năng lượng: Điều quan trọng tiếp theo cần tìm kiếm ở đèn tích điện năng lượng mặt trời là dung lượng pin. Mặc dù chúng được cung cấp bởi năng lượng mặt trời, nhưng đèn phải cần pin dự trữ để lưu trữ năng lượng điện được tạo ra. Những pin này cần phải có hiệu quả cao và có khả năng sạc lại tốt. Khi nói đến công suất, nó hoàn toàn phụ thuộc vào mục đích của đèn. Đối với đèn chiếu sáng ngoài trời, bạn sẽ cần một pin có dung lượng pin ít nhất 1.200 mAH nhưng đối với đèn trang trí thì chúng có thể có dung lượng nhỏ hơn. 3. Hiệu quả của tấm pin: Một điều quan trọng khác cần xem xét là hiệu quả của các tấm pin mặt trời. Các tấm pin nói chung có khoảng 15 hiệu quả của việc chuyển đổi năng lượng mặt trời thành năng lượng điện. Bất kỳ hiệu quả nào trong khoảng từ 15% đến 18% là mức trung bình để sạc đầy pin của đèn trong vòng 6 giờ cho đến khi đầy. Đây là thời gian sạc trung bình tối đa bất kể dung lượng pin 4. Độ sáng Một điều rất quan trọng khác mà bạn cần biết là độ sáng của những chiếc đèn này. Độ sáng của đèn cảm ứng năng lượng phụ thuộc vào nhiều yếu tố khác nhau, từ bóng đèn LED được sử dụng cho đến độ sáng của các bóng đèn này. Bóng đèn năng lượng mặt trời ngoài trời thông thường có Độ sáng 5K với độ sáng của chúng từ 1.500 Lumens cơ bản và ngày càng cao hơn tùy thuộc vào chất lượng của bóng đèn LED được sử dụng. Đèn solar cơ bản sẽ có độ sáng tương đối nhỏ hơn khoảng 800 lumens gần như tương đương với bóng đèn sợi đốt. Có một số sai lầm của người dùng là nghĩ rằng quyết định độ sáng của đèn chính là Watt, đèn có công suất càng cao thì độ sáng càng mạnh, nhưng trên thực tế không phải vậy. Độ sáng của đèn còn phụ thuộc vào Lumen. Vì vậy đừng nghĩ rằng đèn 100W, 90W thì sáng hơn đèn 60W, 40W hay 20W (Nó chỉ đúng khi nó cùng 1 loại đèn). (Một sai lầm của nhiều người chưa hiểu kỹ về dòng đèn này cứ nghĩ đến 150W, 200W thì sáng tốt mà quên ra đó không phải yếu tố quyết định để mua đèn. Bạn cần phải xem kỹ độ sáng, công suất tấm pin, pin lưu trữ có đủ đáp ứng để đèn sáng nguyên đêm được hay không) 5. Tính năng cảm biến: Độ che phủ là một yếu tố quan trọng đặc biệt nhất đối với đèn an ninh dùng năng lượng mặt trời cảm biến chuyển động. Trong các đèn này, bạn có một cảm biến chuyển động Pir giúp nhận diện, phát hiện chuyển động của ánh sáng và sau đó báo hiệu đèn bật sáng Đèn được bật miễn là có một chuyển động trong vùng lân cận cảm biến của nó và nó sẽ tự động tắt khi người đó rời khỏi phạm vi cảm biến. Đối với tính năng và mục đích bảo mật rất quan trọng này, điều quan trọng là bạn phải biết và chọn một cảm biến pin năng lượng mặt trời chất lượng tốt với độ bao phủ phù hợp. 6. Không gian chiếu sáng: Bạn cần xem xét qua độ sáng của đèn chiếu sáng với độ rộng bao xa, lắp đặt chiều cao bao nhiêu để xem chúng có chiếu sáng hết được nhu cầu của bạn, khu vực bạn cần chiếu sáng để đưa ra tính toán về khoảng cách và số lượng đèn năng lượng mặt trời cần lắp đặt. 7. Chất liệu: Loại vật liệu là một yếu tố quan trọng khác khi bạn quyết định mua đèn led sân vườn năng lượng mặt trời​ vì chúng sẽ phải chịu được thời tiết bên ngoài. Đèn được làm từ rất nhiều chất liệu:  Kim loại: Nhôm, thép, … Nhựa Nên chọn loại đèn không thấm nước trong tự nhiên và cũng có thể chịu được bất kỳ bụi hoặc mưa lớn. Đối với điều này, bạn có thể chọn đèn với chỉ số chống nước IP65 chất lượng tốt và nhựa ABS có độ bền cao được ưa thích. Đối với mục đích trang trí sân vườn, nhựa thông thường có thể bị hư hỏng nhanh Các tấm pin của đèn cũng có 2 loại vật liệu Tinh thể đơn Đa tinh thể Vật liệu đơn tinh thể có chất lượng tinh vi và tốt hơn vật liệu đa tinh thể, mang đến hiệu quả hơn trong việc chuyển đổi năng lượng ánh sáng mặt trời thành điện năng. Cách lắp đặt đèn led năng lượng mặt trời: Lắp đặt đèn mặt trời là một trong những điều dễ dàng nhất so với các loại đèn điện khác vì chúng không cần đến dây điện rườm rà, chúng đều được cài đặt sẵn và chỉ đơn giản là các định dạng cắm đất, gắn trụ, tường… Đèn chiếu sáng lối đi sân vườn chỉ đơn giản loại cắm đất hoặc cố định trụ trên sàn, trên mặt đất… Đối với đèn pha, đèn an ninh sẽ cần xác định thêm chiều cao lắp cho phù hợp. Điều quan trọng nhất khi lắp đặt đèn chính là xác định vị trí của tấm pin, sẽ có 2 loại: đèn và tấm pin liền thể, đèn và tấm pin rời nhau. Dù là thiết kế như thế nào thì bạn cũng cần lắp đặt sao cho tấm pin hướng lên trên để nhận được ánh sáng mặt trời nhiều nhất. Yêu cầu duy nhất là có nhiều ánh sáng mặt trời suốt cả ngày, và vì vậy chúng có thể được đặt ở bất cứ đâu giúp tấm pin không bị bóng râm. Câu hỏi thường gặp về đèn năng lượng mặt trời: Đèn mặt trời có cần ánh nắng trực tiếp không?  Trả lời: Khi đèn được đặt ở nơi có ánh sáng trực tiếp vào ban ngày, chúng có thể thu thập nhiều năng lượng hơn trong pin, có nghĩa là ánh sáng của bạn sẽ sáng lâu hơn vào ban đêm. Vì vậy, để có kết quả tốt nhất, bạn nên đặt đèn ở vị trí có ánh sáng mặt trời trực tiếp trong vài giờ. Tuy nhiên, đèn sẽ vẫn hoạt động dưới ánh sáng gián tiếp hoặc vào những ngày nhiều mây — chúng sẽ không thu được nhiều năng lượng và thời gian chiếu sáng vào buổi tối sẽ ngắn hơn. Đèn mặt trời có dễ lắp đặt không? Trả lời: đèn có tính lưu động cao nên rất dễ lắp đặt hay di chuyển. Trong mỗi thùng sản phẩm nào khi mua đều có phụ tùng lắp đặt đi kèm với tài liệu hướng dẫn lắp đặt. Nơi tốt nhất để lắp đặt đèn tích điện năng lượng mặt trời?  Trả lời: Để có được kết quả tốt nhất, bạn nên đặt chúng ở vị trí có ánh sáng mặt trời trực tiếp từ sáu đến tám giờ trong ngày. Nếu chúng được thiết kế để gắn vào tường, hãy cân nhắc đặt đèn ở trên cao, nơi chúng sẽ gần mặt trời hơn. Bạn cũng sẽ muốn đảm bảo đèn của mình không ở vị trí bất tiện, chẳng hạn như ở lối đi hoặc chắn cửa sổ. Đèn và tấm pin lắp ngoài trời khi trời mưa có bị ảnh hưởng không? Trả lời: Không vì những sản phẩm này có đặc tính ở ngoài trời nên nhà sản xuất đã nắm bắt được vấn đề này và đã sản xuất theo tiêu chuẩn IP65, có nghĩa là chống bụi và chống nước thâm nhập. Vì vậy mà bạn hoàn toàn yên tâm mà sử dụng đèn LED mặt trời nhé. Vấn đề này còn phụ thuộc vào chất lượng sản phẩm của mỗi nhà sản xuất quyết định đến đèn và Pin mặt trời có tuổi thọ khác nhau. Thường tấm pin mặt trời và bóng đèn LED rất bền và rất ít hư hỏng (tấm pin tuổi thọ từ 20-25 năm, bóng đèn led tuổi thọ lớn hơn 50.000 giờ). Solar Light thường có tuổi thọ kéo dài bao lâu? Trả lời: Nói chung, pin trong đèn LED năng lượng mặt trời thường sẽ có tuổi thọ ba hoặc bốn năm trước khi cần phải thay thế — bạn dễ dàng tìm mua trên thị trường. Bạn có thể giúp tăng tuổi thọ của đèn bằng cách làm sạch các tấm pin thường xuyên và bảo vệ chúng khỏi thời tiết khắc nghiệt của mùa đông, tấm pin sẽ có tuổi thọ rất lâu, thương lên đến 25 năm. Đèn led sẽ có tuổi thọ hoạt động đến 50.000 giờ. Có cần phải có bất kỳ hệ thống dây điện nào không? Trả lời: Tất cả các đèn trong danh sách của chúng tôi là các thiết bị khép kín, bao gồm các tấm pin, pin lưu trữ và đèn. Không cần phải nối dây bất cứ thứ gì và vì chúng chạy bằng năng lượng mặt trời nên không cần cắm vào nguồn điện. Đèn sạc năng lượng mặt trời sẽ hoạt động vào mùa đông? Trả lời: Đèn Solar sẽ hoạt động quanh năm, ngay cả trong những tháng lạnh hơn khi ngày ngắn hơn. Tuy nhiên, ít ánh sáng mặt trời hơn sẽ đồng nghĩa với việc sạc pin ít hơn, vì vậy đèn sẽ hoạt động thời gian ngắn hơn trong mùa đông. Có phải tất cả các loại đèn dùng năng lượng mặt trời đều được chế tạo giống nhau không? Trả lời: Trong khi tất cả các loại đèn sử dụng năng lượng mặt trời đều có tấm pin, pin và bóng đèn, các sản phẩm chất lượng cao hơn thường có các tấm pin năng lượng mặt trời hiệu quả hơn và pin dung lượng cao hơn cho phép chúng hoạt động lâu hơn. Với nhiều loại đèn có sẵn, việc tìm ra lựa chọn tốt nhất cho bạn sẽ phụ thuộc vào nhu cầu sử dụng của từng gia đình. Bạn đang muốn thêm không khí cho trải nghiệm ăn uống ngoài trời của mình? Bạn có muốn trang trí khu vườn cho một dịp đặc biệt? hay Bạn có muốn cải thiện tầm nhìn xung quanh nhà của bạn vào ban đêm? Đèn năng lượng mặt trời thường gặp những hư hỏng gì và cách khắc phục chúng như thế nào? Đèn thường hay gặp một số vấn đề sau: Bóng đèn Led mờ, sáng không rõ: do bạn sử dụng đèn LED có chất lượng kém &gt;Khắc phục: Nên chọn mua sản phẩm có chất lượng tốt Đèn sáng không đủ lâu trong đêm (chỉ sáng khoảng vài ba tiếng): có thể là do ban ngày sạc pin chưa đầy hoặc do pin sạc bị chai nên không nạp đầy &gt;Khắc phục: Thay pin sạc nếu pin bị chai, còn nếu sạc không đầy do ngày không đủ nắng thì đây là đặc điểm phải chấp nhận ở dòng đèn này Đèn không sáng: là do hư cảm biến quang hoặc hư mạch điều khiển. Khắc phục: Thay thế cảm biến quang và mạch điều khiển. Hai linh kiệnnày giá tương đối rẻ Đèn mặt trời thường có chế độ bảo hành bao lâu? Yếu tố này tùy thuộc vào mỗi công ty hay cửa hàng cung cấp mà bạn có chế độ bảo hành khác nhau. Thông thường sẽ là 6-12 tháng. Nhớ là khi mua đèn phải hỏi rõ vấn đề này để phòng khi đèn gặp sự cố. Givasolar cung cấp chế độ từ 1-2 năm. Tại sao có một công tắc bật/mở trên đèn? Công tắc bật/ mở được trang bị trên đèn có thể giúp bạn điều khiển và khởi động thiết bị. Nếu gia đình muốn sử dụng đèn ở ngoài trời hoạt động cả ngày, bạn chỉ cần bật công tắc bật/ tắt. Nếu bạn muốn sạc đèn và cất giữ đèn để sử dụng sau đó, bạn có thể tắt công tắc cho đến khi sẵn sàng sử dụng lại. Khi công tắc ở vị trí tắt, đèn vẫn có thể tiếp tục nhận nguồn điện năng từ mặt trời và lưu trữ bên trong pin để sử dụng về sau. Nên mua loại đèn năng lượng mặt trời sân vườn nào? Ngoài những mẫu đèn thông dụng thì có những mẫu đèn thiết kế đặc biệt như: Đèn Đường Năng lượng mặt trời: Loại đèn sử dụng khá thông dụng tại Việt Nam, những mẫu đèn năng lượng cũng khá đa dạng mẫu mã, đèn có thể lắp đặt tại gia đình, hay chiếu sáng sáng các con đường nhỏ, đường phố dù ở thành thị hay nông thôn. Đèn pha Năng lượng mặt trời: đèn có độ sáng mạnh, phạm vi sử dụng cũng khá đa dạng, bất kì nơi nào cần ánh sáng đều có thể lắp đặt nó như nhà ở, trường học, sân bóng, nhà xe, chùa, công trình xây dựng…cũng có tính di động, mang theo khi cần thiết. Đèn hình cầu: Loại này rất tốt cho lối đi trong vườn, đường đi và bồn hoa. Sử dụng năng lượng mặt trời có nghĩa là không phải lo lắng về hệ thống dây điện, vì vậy bạn có thể sử dụng chúng ở bất cứ đâu mà mặt đất đủ mềm để đặt chúng vào. Đèn lồng: Một cách tuyệt vời để thêm bầu không khí, đèn lồng chạy bằng năng lượng mặt trời có nhiều màu sắc, kích cỡ khác nhau và thậm chí có cả hiệu ứng nến chân thực. Chúng là một tùy chọn di động tuyệt vời có thể thêm ánh sáng ấm áp ở bất cứ nơi nào chúng được đặt. Đèn dây: Lý tưởng cho các bữa tiệc, các dịp đặc biệt và các ngày lễ, đèn dây sử dụng năng lượng mặt trời có thể được quấn quanh các trụ, lan can, cây cối và treo trên hàng rào. Đèn cảm biến chuyển động: Đúng như tên gọi, những đèn này chỉ bật khi phát hiện chuyển động, điều này làm cho chúng trở nên tuyệt vời để ngăn chặn những kẻ xâm nhập và thiết thực để chiếu sáng các ô cửa và lối đi. Đèn chiếu sáng trong nhà: Không phải lúc nào chúng cũng được lắp đặt ngoài trời, Vì chúng không dựa vào nguồn điện lưới nên đèn chạy bằng năng lượng mặt trời rất phù hợp để chiếu sáng nhà kho, nhà để xe và hiên ngoài. Đèn được thiết kế cho mục đích này thường sẽ có các tấm pin mặt trời bên ngoài được kết nối với đèn bên trong thông qua một dây cáp dài vừa phải. LIÊN HỆ MUA ĐÈN LED NĂNG LƯỢNG MẶT TRỜI, BÁO GIÁ SỈ VÀ LẺ: Công ty điện mặt trời GIVASOLAR Địa chỉ: 102/39 Phan Huy Ích, Phường 15, Q. Tân Bình, TP. HCM Hotline: 0934 013 083 – 0909 636 011 Gmail: givasolar@gmail.com" />
+	<meta property="og:url" content="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/" />
+	<meta property="og:site_name" content="GIVASOLAR" />
+	<meta property="og:image" content="https://givasolar.com/wp-content/uploads/2020/03/Showroom-den-nang-luong-mat-troi.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@GivaSolar" />
+	<meta name="geo.position" content="106.63604629778763;10.829019638230116" />
+	<meta name="geo.region" content="Việt Nam" />
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//maps.gstatic.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.gstatic.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//apis.google.com' />
+<link rel='dns-prefetch' href='//google-analytics.com' />
+<link rel='dns-prefetch' href='//www.google-analytics.com' />
+<link rel='dns-prefetch' href='//ssl.google-analytics.com' />
+<link rel='dns-prefetch' href='//youtube.com' />
+<link rel='dns-prefetch' href='//api.pinterest.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//pixel.wp.com' />
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//platform.twitter.com' />
+<link rel='dns-prefetch' href='//syndication.twitter.com' />
+<link rel='dns-prefetch' href='//platform.instagram.com' />
+<link rel='dns-prefetch' href='//disqus.com' />
+<link rel='dns-prefetch' href='//sitename.disqus.com' />
+<link rel='dns-prefetch' href='//s7.addthis.com' />
+<link rel='dns-prefetch' href='//platform.linkedin.com' />
+<link rel='dns-prefetch' href='//w.sharethis.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//s.gravatar.com' />
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//i.ytimg.com' />
+<link rel='dns-prefetch' href='//staticxx.facebook.com' />
+<link rel='dns-prefetch' href='//static.xx.fbcdn.net' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<link rel='prefetch' href='https://givasolar.com/wp-content/themes/flatsome/assets/js/flatsome.js?ver=89ac940c4841291ea8d6' />
+<link rel='prefetch' href='https://givasolar.com/wp-content/themes/flatsome/assets/js/chunk.slider.js?ver=3.17.6' />
+<link rel='prefetch' href='https://givasolar.com/wp-content/themes/flatsome/assets/js/chunk.popups.js?ver=3.17.6' />
+<link rel='prefetch' href='https://givasolar.com/wp-content/themes/flatsome/assets/js/chunk.tooltips.js?ver=3.17.6' />
+<link rel='prefetch' href='https://givasolar.com/wp-content/themes/flatsome/assets/js/woocommerce.js?ver=1a392523165907adee6a' />
+<link rel="alternate" type="application/rss+xml" title="Dòng thông tin GIVASOLAR &raquo;" href="https://givasolar.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Dòng phản hồi GIVASOLAR &raquo;" href="https://givasolar.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Nguồn cấp GIVASOLAR &raquo; Đèn năng lượng mặt trời Danh mục" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/feed/" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id='wp-block-library-inline-css' type='text/css'>
+:root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,161;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px;--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{clip:rect(1px,1px,1px,1px);word-wrap:normal!important;border:0;-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{clip:auto!important;background-color:#ddd;-webkit-clip-path:none;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<link rel='stylesheet' id='toc-screen-css' href='https://givasolar.com/wp-content/plugins/table-of-contents-plus/screen.min.css?ver=2309' type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link data-minify="1" rel='stylesheet' id='pzf-style-css' href='https://givasolar.com/wp-content/cache/min/1/wp-content/plugins/button-contact-vr/css/style.css?ver=1695961045' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='flatsome-main-css' href='https://givasolar.com/wp-content/cache/min/1/wp-content/themes/flatsome/assets/css/flatsome.css?ver=1695961045' type='text/css' media='all' />
+<style id='flatsome-main-inline-css' type='text/css'>
+@font-face {
+				font-family: "fl-icons";
+				font-display: block;
+				src: url(https://givasolar.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.eot?v=3.17.6);
+				src:
+					url(https://givasolar.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.eot#iefix?v=3.17.6) format("embedded-opentype"),
+					url(https://givasolar.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.woff2?v=3.17.6) format("woff2"),
+					url(https://givasolar.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.ttf?v=3.17.6) format("truetype"),
+					url(https://givasolar.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.woff?v=3.17.6) format("woff"),
+					url(https://givasolar.com/wp-content/themes/flatsome/assets/css/icons/fl-icons.svg?v=3.17.6#fl-icons) format("svg");
+			}
+</style>
+<link data-minify="1" rel='stylesheet' id='flatsome-shop-css' href='https://givasolar.com/wp-content/cache/min/1/wp-content/themes/flatsome/assets/css/flatsome-shop.css?ver=1695961045' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='flatsome-style-css' href='https://givasolar.com/wp-content/cache/min/1/wp-content/themes/flatsome-child/style.css?ver=1695961045' type='text/css' media='all' />
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://givasolar.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" defer></script>
+<link rel="https://api.w.org/" href="https://givasolar.com/wp-json/" /><link rel="alternate" type="application/json" href="https://givasolar.com/wp-json/wp/v2/product_cat/20" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://givasolar.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.4.1" />
+<meta name="generator" content="WooCommerce 8.2.1" />
+<!-- site-navigation-element Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Trang Ch\u1ee7","url":"https:\/\/givasolar.com\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Gi\u1edbi Thi\u1ec7u","url":"https:\/\/givasolar.com\/gioi-thieu\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Li\u00ean H\u1ec7","url":"https:\/\/givasolar.com\/lien-he\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"S\u1ea3n Ph\u1ea9m","url":"https:\/\/givasolar.com\/san-pham\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n LED M\u1eb7t Tr\u1eddi","url":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n \u0110\u01b0\u1eddng","url":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/den-chieu-sang-duong-nang-luong-mat-troi\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n Led Pha","url":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/den-led-pha\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n Treo T\u01b0\u1eddng","url":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/den-treo-tuong\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n G\u1eafn Tr\u1ee5 C\u1ed5ng","url":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/den-tru-cong\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n Tr\u1ee5 S\u00e2n V\u01b0\u1eddn","url":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/den-loi-di\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n C\u1eafm \u0110\u1ea5t","url":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/den-cam-co\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n \u00c2m \u0110\u1ea5t","url":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/den-am-san-am-dat\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n Di\u1ec7t C\u00f4n Tr\u00f9ng","url":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/den-bat-con-trung-bat-muoi\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n C\u1ea7m Tay","url":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/den-led-cam-tay\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n T\u00edn Hi\u1ec7u Giao th\u00f4ng","url":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/den-tin-hieu-giao-thong\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"S\u1ea3n Ph\u1ea9m Kh\u00e1c","url":""},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n, d\u00e2y \u0111\u00e8n LED trang tr\u00ed","url":"https:\/\/givasolar.com\/danh-muc\/den-trang-tri-san-vuon\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n Led tr\u1ed3ng c\u00e2y","url":"https:\/\/givasolar.com\/danh-muc\/den-led-quang-hop\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"\u0110\u00e8n Pha S\u1ea1c","url":"https:\/\/givasolar.com\/danh-muc\/den-pha-sac\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Camera n\u0103ng l\u01b0\u1ee3ng m\u1eb7t tr\u1eddi","url":"https:\/\/givasolar.com\/danh-muc\/san-pham-ung-dung-sinh-hoat-nlmt\/camera-nang-luong-mat-troi\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Qu\u1ea1t N\u0103ng L\u01b0\u1ee3ng M\u1eb7t Tr\u1eddi","url":"https:\/\/givasolar.com\/san-pham\/quat-chay-bang-nang-luong-mat-troi-gv-dq1800\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Balo n\u0103ng l\u01b0\u1ee3ng m\u1eb7t tr\u1eddi","url":"https:\/\/givasolar.com\/danh-muc\/san-pham-ung-dung-sinh-hoat-nlmt\/balo-nang-luong-mat-troi\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"D\u00f9 n\u0103ng l\u01b0\u1ee3ng m\u1eb7t tr\u1eddi","url":"https:\/\/givasolar.com\/san-pham\/du-nang-luong-mat-troi-humbrella-kem-den-chieu-sang\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Gia C\u00f4ng C\u00e1c m\u1eabu Tr\u1ee5 \u0110\u00e8n","url":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/cot-den\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Inverter Solar","url":"https:\/\/givasolar.com\/danh-muc\/bo-kich-dien-inverter\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Inverter H\u00f2a L\u01b0\u1edbi (B\u00e1m t\u1ea3i)","url":"https:\/\/givasolar.com\/danh-muc\/bo-kich-dien-inverter\/hoa-luoi\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Inverter Hybrid","url":"https:\/\/givasolar.com\/danh-muc\/bo-kich-dien-inverter\/hybrid\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Inverter Off Grid","url":"https:\/\/givasolar.com\/danh-muc\/bo-kich-dien-inverter\/off-grid\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Inverter H\u00e3ng Sofar","url":"https:\/\/givasolar.com\/danh-muc\/bo-kich-dien-inverter\/sofar\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Inverter Huawei","url":"https:\/\/givasolar.com\/danh-muc\/bo-kich-dien-inverter\/huawei\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Inverter Hybrid DEYE","url":"https:\/\/givasolar.com\/danh-muc\/bo-kich-dien-inverter\/deye\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Inverter Canadian","url":"https:\/\/givasolar.com\/danh-muc\/bo-kich-dien-inverter\/canadian-solar\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Inverter SMA","url":"https:\/\/givasolar.com\/danh-muc\/bo-kich-dien-inverter\/sma\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Linh Ki\u1ec7n L\u1eafp \u0110\u1eb7t","url":"https:\/\/givasolar.com\/danh-muc\/phu-kien-lap-dat-dien-mat-troi\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Pin N\u0103ng L\u01b0\u1ee3ng M\u1eb7t Tr\u1eddi","url":"https:\/\/givasolar.com\/danh-muc\/tam-pin-nang-luong-mat-troi-cao-cap\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"B\u1ed9 \u0111i\u1ec1u khi\u1ec3n s\u1ea1c","url":"https:\/\/givasolar.com\/danh-muc\/bo-dieu-khien-sac-nang-luong-mat-troi\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"B\u1ed9 k\u00edch \u0111i\u1ec7n mini","url":"https:\/\/givasolar.com\/danh-muc\/bo-kich-dien-inverter\/may-kich-dien\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Ph\u1ee5 ki\u1ec7n: CB, MC4, C\u00e1p...","url":"https:\/\/givasolar.com\/danh-muc\/phu-kien-lap-dat-dien-mat-troi\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"K\u1eb9p pin - Rail Nh\u00f4m","url":"https:\/\/givasolar.com\/danh-muc\/phu-kien-lap-dat-dien-mat-troi\/kep-pin\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"D\u00e2y c\u00e1p \u0111i\u1ec7n Solar","url":"https:\/\/givasolar.com\/danh-muc\/phu-kien-lap-dat-dien-mat-troi\/day-cap-dien\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"T\u1ee7 \u0111i\u1ec7n SOLAR","url":"https:\/\/givasolar.com\/danh-muc\/phu-kien-lap-dat-dien-mat-troi\/tu-dien\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"CB, ch\u1ed1ng s\u00e9t, MCCB","url":"https:\/\/givasolar.com\/danh-muc\/phu-kien-lap-dat-dien-mat-troi\/cb-mccb\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"B\u00ecnh l\u01b0u tr\u1eef \u0111i\u1ec7n","url":"https:\/\/givasolar.com\/danh-muc\/ac-quy-nang-luong-mat-troi\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"H\u1ec7 th\u1ed1ng b\u01a1m n\u01b0\u1edbc","url":"https:\/\/givasolar.com\/danh-muc\/he-thong-bom-nuoc-nang-luong-mat-troi\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Bi\u1ebfn t\u1ea7n cho m\u00e1y b\u01a1m","url":"https:\/\/givasolar.com\/danh-muc\/bien-tan-bom-nuoc\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"M\u00e1y b\u01a1m n\u01b0\u1edbc m\u1eb7t tr\u1eddi","url":"https:\/\/givasolar.com\/san-pham\/may-bom-nuoc-nang-luong-mat-troi-gv-wp12v\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"L\u1eafp \u0111\u1eb7t","url":""},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"H\u00f2a L\u01b0\u1edbi (On-Grid)","url":"https:\/\/givasolar.com\/danh-muc\/he-thong-nang-luong-mat-troi\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Zero Export - H\u00f2a l\u01b0\u1edbi b\u00e1m t\u1ea3i","url":"https:\/\/givasolar.com\/zero-export\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"H\u00f2a L\u01b0\u1edbi L\u01b0u Tr\u1eef (Hybrid)","url":"https:\/\/givasolar.com\/he-thong-dien-nang-luong-mat-troi-hoa-luoi-co-luu-tru-hybrid\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Combo \u0111i\u1ec7n m\u1eb7t tr\u1eddi MINI","url":"https:\/\/givasolar.com\/danh-muc\/dien-mat-troi-mini\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Tin T\u1ee9c","url":"https:\/\/givasolar.com\/tin-tuc\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"D\u1ef0 \u00c1N","url":"https:\/\/givasolar.com\/category\/du-an\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Ch\u00ednh S\u00e1ch","url":"https:\/\/givasolar.com\/chinh-sach\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Giao h\u00e0ng \u2013 Thanh to\u00e1n","url":"https:\/\/givasolar.com\/giao-hang-thanh-toan\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Trung T\u00e2m B\u1ea3o H\u00e0nh SOFAR","url":"https:\/\/givasolar.com\/trung-tam-bao-hanh\/"}]}</script><!-- / site-navigation-element Schema optimized by Schema Pro --><!-- sitelink-search-box Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"WebSite","name":"Givasolar - \u0110i\u1ec7n N\u0103ng l\u01b0\u1ee3ng m\u1eb7t tr\u1eddi","url":"https:\/\/givasolar.com","potentialAction":[{"@type":"SearchAction","target":"https:\/\/givasolar.com\/?s={search_term_string}","query-input":"required name=search_term_string"}]}</script><!-- / sitelink-search-box Schema optimized by Schema Pro --><!-- breadcrumb Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/givasolar.com\/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/","name":"\u0110\u00e8n n\u0103ng l\u01b0\u1ee3ng m\u1eb7t tr\u1eddi"}}]}</script><!-- / breadcrumb Schema optimized by Schema Pro --><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Givasolar",
+  "alternateName": "Công Ty lắp đặt thiết bị điện năng lượng mặt trời tại HCM",
+  "url": "https://givasolar.com/",
+  "logo": "https://givasolar.com/wp-content/uploads/2018/07/Logo-Givasolar.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+84934013083",
+    "contactType": "sales",
+    "contactOption": "TollFree",
+    "areaServed": "VN",
+    "availableLanguage": "Vietnamese"
+  },
+  "sameAs": [
+    "https://www.facebook.com/DienNangLuongMatTroiGivaSolar",
+    "https://twitter.com/GivaSolar/",
+    "https://www.instagram.com/givasolar/",
+    "https://www.pinterest.com/givasolar/",
+    "https://givasolar.com/"
+  ]
+}
+</script>
+
+<script type='application/ld+json'> 
+{
+  "@context": "http://www.schema.org",
+  "@type": "LocalBusiness",
+  "name": "Givasolar",
+  "url": "https://givasolar.com/",
+  "sameAs": [
+   "https://twitter.com/GivaSolar2",
+   "https://www.facebook.com/DienNangLuongMatTroiGivaSolar",
+   "https://www.instagram.com/givasolar/?hl=en",
+   "https://www.pinterest.com/dienmattroigivasolar/"
+  ],
+  "logo": "https://givasolar.com/wp-content/uploads/2018/07/Logo-Givasolar.png",
+  "image": "https://givasolar.com/wp-content/uploads/2018/07/Logo-Givasolar.png",
+  "description": "Givasolar là đơn vị đi đầu trong dịch vụ cung cấp các sản phẩm dùng nguồn năng lượng mặt trời - giải pháp năng lượng xanh, tiện ích để bảo vệ môi trường và tiết kiệm chi phí cho gia đình, doanh nghiệp của bạn. Chúng tôi mang đến bạn các dòng sản phẩm: Đèn led sân vườn, Đèn trang trí sân vườn, Đèn chiếu sáng năng lượng mặt trời, Tấm pin năng lượng mặt trời, Hệ thống năng lượng mặt trời, Đèn led quang hợp, Ắc quy, Máy phát điện năng lượng mặt trời, Inverter tích hợp sạc năng lượng mặt trời. Các sản phẩm đều được bán với giá tốt nhất và bảo hành đảm bảo. Givasolar luôn hướng đến mục tiêu trở thành nhà cung cấp hàng đầu, mang đến những giải pháp năng lượng tối ưu, hiệu quả, đáp ứng sự hài lòng tốt nhất cho quý khách hàng. Hotline: 090 963 60 11",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "102/39 Phan Huy Ích, Phường 15, Q. Tân Bình, TP. HCM",
+    "postOfficeBoxNumber": "givasolar@gmail.com",
+    "addressLocality": "Bình Tân",
+    "addressRegion": "Hồ Chí Minh",
+    "postalCode": "700000",
+    "addressCountry": "Việt Nam"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "10.8129844",
+    "longitude": "106.6050111"
+  },
+  "hasMap": "https://www.google.com/maps/place/GivaSolar/@10.8129844,106.6050111,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x6faa2900a08329e5!8m2!3d10.8129844!4d106.6071998",
+"openingHoursSpecification": [
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+"Saturday",
+"Sunday"
+    ],
+    "opens": "08:00",
+    "closes": "17:00"
+  }
+  ],
+  "priceRange":"400.000 VNĐ - 50.000.000 VNĐ",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+84934013083",
+    "contactType": "Sales"
+  },
+  "telephone": "+84934013083"
+}
+</script>
+
+
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5N5M28');</script>
+<!-- End Google Tag Manager -->	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+				<style id="wpsp-style-frontend"></style>
+			<link rel="icon" href="https://givasolar.com/wp-content/uploads/2019/11/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://givasolar.com/wp-content/uploads/2019/11/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://givasolar.com/wp-content/uploads/2019/11/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://givasolar.com/wp-content/uploads/2019/11/cropped-favicon-270x270.png" />
+<style id="custom-css" type="text/css">:root {--primary-color: #446084;}.header-main{height: 100px}#logo img{max-height: 100px}#logo{width:200px;}.header-bottom{min-height: 55px}.header-top{min-height: 20px}.transparent .header-main{height: 265px}.transparent #logo img{max-height: 265px}.has-transparent + .page-title:first-of-type,.has-transparent + #main > .page-title,.has-transparent + #main > div > .page-title,.has-transparent + #main .page-header-wrapper:first-of-type .page-title{padding-top: 265px;}.header.show-on-scroll,.stuck .header-main{height:70px!important}.stuck #logo img{max-height: 70px!important}.search-form{ width: 50%;}.header-bottom {background-color: rgba(255,255,255,0)}.header-main .nav > li > a{line-height: 30px }.stuck .header-main .nav > li > a{line-height: 50px }.header-bottom-nav > li > a{line-height: 16px }@media (max-width: 549px) {.header-main{height: 70px}#logo img{max-height: 70px}}.nav-dropdown{font-size:100%}.header-top{background-color:#000000!important;}h1,h2,h3,h4,h5,h6,.heading-font{color: #446084;}body{font-size: 100%;}@media screen and (max-width: 549px){body{font-size: 100%;}}body{font-family: "Roboto Condensed", sans-serif;}body {font-weight: 400;font-style: normal;}.nav > li > a {font-family: "Roboto Condensed", sans-serif;}.mobile-sidebar-levels-2 .nav > li > ul > li > a {font-family: "Roboto Condensed", sans-serif;}.nav > li > a,.mobile-sidebar-levels-2 .nav > li > ul > li > a {font-weight: 700;font-style: normal;}h1,h2,h3,h4,h5,h6,.heading-font, .off-canvas-center .nav-sidebar.nav-vertical > li > a{font-family: "Roboto Condensed", sans-serif;}h1,h2,h3,h4,h5,h6,.heading-font,.banner h1,.banner h2 {font-weight: 700;font-style: normal;}.alt-font{font-family: "Roboto Condensed", sans-serif;}.alt-font {font-weight: 400!important;font-style: normal!important;}.header:not(.transparent) .header-nav-main.nav > li > a:hover,.header:not(.transparent) .header-nav-main.nav > li.active > a,.header:not(.transparent) .header-nav-main.nav > li.current > a,.header:not(.transparent) .header-nav-main.nav > li > a.active,.header:not(.transparent) .header-nav-main.nav > li > a.current{color: #dd3333;}.header-nav-main.nav-line-bottom > li > a:before,.header-nav-main.nav-line-grow > li > a:before,.header-nav-main.nav-line > li > a:before,.header-nav-main.nav-box > li > a:hover,.header-nav-main.nav-box > li.active > a,.header-nav-main.nav-pills > li > a:hover,.header-nav-main.nav-pills > li.active > a{color:#FFF!important;background-color: #dd3333;}a{color: #225380;}.has-equal-box-heights .box-image {padding-top: 100%;}.shop-page-title.featured-title .title-bg{background-image: url(https://givasolar.com/wp-content/uploads/2020/03/den-nang-luong-mat-troi.jpg)!important;}@media screen and (min-width: 550px){.products .box-vertical .box-image{min-width: 0px!important;width: 0px!important;}}.footer-1{background-color: #dddddd}.absolute-footer, html{background-color: #000000}.nav-vertical-fly-out > li + li {border-top-width: 1px; border-top-style: solid;}.label-new.menu-item > a:after{content:"New";}.label-hot.menu-item > a:after{content:"Hot";}.label-sale.menu-item > a:after{content:"Sale";}.label-popular.menu-item > a:after{content:"Popular";}</style><style id="kirki-inline-styles">/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyWyosBD5XpjLdSL57k24Q.woff) format('woff');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyWyosBK5XpjLdSL57k24Q.woff) format('woff');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyWyosBC5XpjLdSL57k24Q.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyWyosBN5XpjLdSL57k24Q.woff) format('woff');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyWyosBB5XpjLdSL57k24Q.woff) format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyWyosBA5XpjLdSL57k24Q.woff) format('woff');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyWyosBO5XpjLdSL57k.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyVVpcBD5XpjLdSL57k24Q.woff) format('woff');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyVVpcBK5XpjLdSL57k24Q.woff) format('woff');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyVVpcBC5XpjLdSL57k24Q.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyVVpcBN5XpjLdSL57k24Q.woff) format('woff');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyVVpcBB5XpjLdSL57k24Q.woff) format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyVVpcBA5XpjLdSL57k24Q.woff) format('woff');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://givasolar.com/wp-content/fonts/roboto-condensed/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyVVpcBO5XpjLdSL57k.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}</style><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+
+<body data-rsssl=1 class="archive tax-product_cat term-den-nang-luong-mat-troi term-20 theme-flatsome woocommerce woocommerce-page woocommerce-no-js wp-schema-pro-2.7.6 lightbox nav-dropdown-has-arrow nav-dropdown-has-shadow nav-dropdown-has-border">
+
+
+<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+<div id="wrapper">
+
+	
+	<header id="header" class="header has-sticky sticky-jump">
+		<div class="header-wrapper">
+			<div id="masthead" class="header-main ">
+      <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
+
+          <!-- Logo -->
+          <div id="logo" class="flex-col logo">
+            
+<!-- Header logo -->
+<a href="https://givasolar.com/" title="GIVASOLAR - Điện năng lượng mặt trời" rel="home">
+		<img width="500" height="118" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20118'%3E%3C/svg%3E" class="header_logo header-logo" alt="GIVASOLAR" data-lazy-src="https://givasolar.com/wp-content/uploads/2018/11/LogoGivasolar.png"/><noscript><img width="500" height="118" src="https://givasolar.com/wp-content/uploads/2018/11/LogoGivasolar.png" class="header_logo header-logo" alt="GIVASOLAR"/></noscript><img  width="500" height="118" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20118'%3E%3C/svg%3E" class="header-logo-dark" alt="GIVASOLAR" data-lazy-src="https://givasolar.com/wp-content/uploads/2018/11/LogoGivasolar.png"/><noscript><img  width="500" height="118" src="https://givasolar.com/wp-content/uploads/2018/11/LogoGivasolar.png" class="header-logo-dark" alt="GIVASOLAR"/></noscript></a>
+          </div>
+
+          <!-- Mobile Left Elements -->
+          <div class="flex-col show-for-medium flex-left">
+            <ul class="mobile-nav nav nav-left ">
+              <li class="nav-icon has-icon">
+  		<a href="#" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay" data-color="" class="is-small" aria-label="Menu" aria-controls="main-menu" aria-expanded="false">
+
+		  <i class="icon-menu" ></i>
+		  <span class="menu-title uppercase hide-for-small">Menu</span>		</a>
+	</li>
+            </ul>
+          </div>
+
+          <!-- Left Elements -->
+          <div class="flex-col hide-for-medium flex-left
+            flex-grow">
+            <ul class="header-nav header-nav-main nav nav-left  nav-line-bottom nav-uppercase" >
+              <li id="menu-item-14285" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-14285 menu-item-design-default has-dropdown"><a title="												" href="https://givasolar.com/" class="nav-top-link" aria-expanded="false" aria-haspopup="menu">Trang Chủ <i class="fa-thin fa-angle-down fa-2xs"></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-14286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14286"><a title="												" href="https://givasolar.com/gioi-thieu/">Giới Thiệu</a></li>
+	<li id="menu-item-14284" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14284"><a title="												" href="https://givasolar.com/lien-he/">Liên Hệ</a></li>
+</ul>
+</li>
+<li id="menu-item-14290" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-14290 active menu-item-design-default has-dropdown"><a title="						" href="https://givasolar.com/san-pham/" class="nav-top-link" aria-expanded="false" aria-haspopup="menu">Sản Phẩm<i class="icon-angle-down" ></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-14263" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-menu-item menu-item-has-children menu-item-14263 active nav-dropdown-col"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/" aria-current="page">Đèn LED Mặt Trời</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li id="menu-item-14265" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14265"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-chieu-sang-duong-nang-luong-mat-troi/">Đèn Đường</a></li>
+		<li id="menu-item-14264" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14264"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-led-pha/">Đèn Led Pha</a></li>
+		<li id="menu-item-14272" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14272"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-treo-tuong/">Đèn Treo Tường</a></li>
+		<li id="menu-item-14266" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14266"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-tru-cong/">Đèn Gắn Trụ Cổng</a></li>
+		<li id="menu-item-14277" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14277"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-loi-di/">Đèn Trụ Sân Vườn</a></li>
+		<li id="menu-item-14275" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14275"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-cam-co/">Đèn Cắm Đất</a></li>
+		<li id="menu-item-14281" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14281"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-am-san-am-dat/">Đèn Âm Đất</a></li>
+		<li id="menu-item-14274" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14274"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-bat-con-trung-bat-muoi/">Đèn Diệt Côn Trùng</a></li>
+		<li id="menu-item-19587" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-19587"><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-led-cam-tay/">Đèn Cầm Tay</a></li>
+		<li id="menu-item-18628" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-18628"><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-tin-hieu-giao-thong/">Đèn Tín Hiệu Giao thông</a></li>
+	</ul>
+</li>
+	<li id="menu-item-14271" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14271 nav-dropdown-col"><a title="						">Sản Phẩm Khác</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li id="menu-item-14269" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14269"><a title="						" href="https://givasolar.com/danh-muc/den-trang-tri-san-vuon/">Đèn, dây đèn LED trang trí</a></li>
+		<li id="menu-item-14273" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14273"><a title="						" href="https://givasolar.com/danh-muc/den-led-quang-hop/">Đèn Led trồng cây</a></li>
+		<li id="menu-item-19588" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-19588"><a href="https://givasolar.com/danh-muc/den-pha-sac/">Đèn Pha Sạc</a></li>
+		<li id="menu-item-14280" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14280"><a title="						" href="https://givasolar.com/danh-muc/san-pham-ung-dung-sinh-hoat-nlmt/camera-nang-luong-mat-troi/">Camera năng lượng mặt trời</a></li>
+		<li id="menu-item-23868" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-23868"><a href="https://givasolar.com/san-pham/quat-chay-bang-nang-luong-mat-troi-gv-dq1800/">Quạt Năng Lượng Mặt Trời</a></li>
+		<li id="menu-item-14279" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14279"><a title="						" href="https://givasolar.com/danh-muc/san-pham-ung-dung-sinh-hoat-nlmt/balo-nang-luong-mat-troi/">Balo năng lượng mặt trời</a></li>
+		<li id="menu-item-14291" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-14291"><a title="						" href="https://givasolar.com/san-pham/du-nang-luong-mat-troi-humbrella-kem-den-chieu-sang/">Dù năng lượng mặt trời</a></li>
+		<li id="menu-item-14288" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14288"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/cot-den/">Gia Công Các mẫu Trụ Đèn</a></li>
+	</ul>
+</li>
+	<li id="menu-item-18036" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-18036 nav-dropdown-col"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/">Inverter Solar</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li id="menu-item-30719" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-30719"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/hoa-luoi/">Inverter Hòa Lưới (Bám tải)</a></li>
+		<li id="menu-item-30720" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-30720"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/hybrid/">Inverter Hybrid</a></li>
+		<li id="menu-item-30721" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-30721"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/off-grid/">Inverter Off Grid</a></li>
+		<li id="menu-item-30722" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-30722"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/sofar/">Inverter Hãng Sofar</a></li>
+		<li id="menu-item-33033" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-33033"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/huawei/">Inverter Huawei</a></li>
+		<li id="menu-item-32131" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-32131"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/deye/">Inverter Hybrid DEYE</a></li>
+		<li id="menu-item-30718" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-30718"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/canadian-solar/">Inverter Canadian</a></li>
+		<li id="menu-item-32966" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-32966"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/sma/">Inverter SMA</a></li>
+	</ul>
+</li>
+	<li id="menu-item-22198" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-22198 nav-dropdown-col"><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/">Linh Kiện Lắp Đặt</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li id="menu-item-14268" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14268"><a title="						" href="https://givasolar.com/danh-muc/tam-pin-nang-luong-mat-troi-cao-cap/">Pin Năng Lượng Mặt Trời</a></li>
+		<li id="menu-item-18035" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-18035"><a href="https://givasolar.com/danh-muc/bo-dieu-khien-sac-nang-luong-mat-troi/">Bộ điều khiển sạc</a></li>
+		<li id="menu-item-30717" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-30717"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/may-kich-dien/">Bộ kích điện mini</a></li>
+		<li id="menu-item-22892" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-22892"><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/">Phụ kiện: CB, MC4, Cáp&#8230;</a></li>
+		<li id="menu-item-32843" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-32843"><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/kep-pin/">Kẹp pin &#8211; Rail Nhôm</a></li>
+		<li id="menu-item-25766" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-25766"><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/day-cap-dien/">Dây cáp điện Solar</a></li>
+		<li id="menu-item-25767" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-25767"><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/tu-dien/">Tủ điện SOLAR</a></li>
+		<li id="menu-item-28908" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-28908"><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/cb-mccb/">CB, chống sét, MCCB</a></li>
+		<li id="menu-item-14270" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14270"><a title="						" href="https://givasolar.com/danh-muc/ac-quy-nang-luong-mat-troi/">Bình lưu trữ điện</a></li>
+	</ul>
+</li>
+	<li id="menu-item-18841" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-18841 nav-dropdown-col"><a href="https://givasolar.com/danh-muc/he-thong-bom-nuoc-nang-luong-mat-troi/">Hệ thống bơm nước</a>
+	<ul class="sub-menu nav-column nav-dropdown-default">
+		<li id="menu-item-18842" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-18842"><a href="https://givasolar.com/danh-muc/bien-tan-bom-nuoc/">Biến tần cho máy bơm</a></li>
+		<li id="menu-item-14292" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-14292"><a title="						" href="https://givasolar.com/san-pham/may-bom-nuoc-nang-luong-mat-troi-gv-wp12v/">Máy bơm nước mặt trời</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-30583" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-30583 menu-item-design-default has-dropdown"><a class="nav-top-link" aria-expanded="false" aria-haspopup="menu">Lắp đặt<i class="icon-angle-down" ></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-14267" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14267"><a title="						" href="https://givasolar.com/danh-muc/he-thong-nang-luong-mat-troi/">Hòa Lưới (On-Grid)</a></li>
+	<li id="menu-item-31923" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31923"><a href="https://givasolar.com/zero-export/">Zero Export &#8211; Hòa lưới bám tải</a></li>
+	<li id="menu-item-30584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30584"><a href="https://givasolar.com/he-thong-dien-nang-luong-mat-troi-hoa-luoi-co-luu-tru-hybrid/">Hòa Lưới Lưu Trữ (Hybrid)</a></li>
+	<li id="menu-item-32024" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-32024"><a href="https://givasolar.com/danh-muc/dien-mat-troi-mini/">Combo điện mặt trời MINI</a></li>
+</ul>
+</li>
+<li id="menu-item-14283" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-14283 menu-item-design-default has-dropdown"><a title="												" href="https://givasolar.com/tin-tuc/" class="nav-top-link" aria-expanded="false" aria-haspopup="menu">Tin Tức<i class="icon-angle-down" ></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-14282" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14282"><a title="												" href="https://givasolar.com/category/du-an/">DỰ ÁN</a></li>
+</ul>
+</li>
+<li id="menu-item-14287" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-14287 menu-item-design-default has-dropdown"><a title="												" href="https://givasolar.com/chinh-sach/" class="nav-top-link" aria-expanded="false" aria-haspopup="menu">Chính Sách<i class="icon-angle-down" ></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-14289" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14289"><a title="						" href="https://givasolar.com/giao-hang-thanh-toan/">Giao hàng – Thanh toán</a></li>
+</ul>
+</li>
+<li id="menu-item-34422" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34422 menu-item-design-default"><a href="https://givasolar.com/trung-tam-bao-hanh/" class="nav-top-link">Trung Tâm Bảo Hành SOFAR</a></li>
+            </ul>
+          </div>
+
+          <!-- Right Elements -->
+          <div class="flex-col hide-for-medium flex-right">
+            <ul class="header-nav header-nav-main nav nav-right  nav-line-bottom nav-uppercase">
+              <li class="header-search header-search-lightbox has-icon">
+	<div class="header-button">		<a href="#search-lightbox" aria-label="Tìm kiếm" data-open="#search-lightbox" data-focus="input.search-field"
+		class="icon primary button circle is-small">
+		<i class="icon-search" style="font-size:16px;" ></i></a>
+		</div>
+	
+	<div id="search-lightbox" class="mfp-hide dark text-center">
+		<div class="searchform-wrapper ux-search-box relative form-flat is-large"><form role="search" method="get" class="searchform" action="https://givasolar.com/">
+	<div class="flex-row relative">
+						<div class="flex-col flex-grow">
+			<label class="screen-reader-text" for="woocommerce-product-search-field-0">Tìm kiếm:</label>
+			<input type="search" id="woocommerce-product-search-field-0" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="s" />
+			<input type="hidden" name="post_type" value="product" />
+					</div>
+		<div class="flex-col">
+			<button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary button  icon mb-0" aria-label="Submit">
+				<i class="icon-search" ></i>			</button>
+		</div>
+	</div>
+	<div class="live-search-results text-left z-top"></div>
+</form>
+</div>	</div>
+</li>
+<li class="header-divider"></li><li class="cart-item has-icon has-dropdown">
+
+<a href="https://givasolar.com/cart/" title="Giỏ hàng" class="header-cart-link is-small">
+
+
+<span class="header-cart-title">
+   Giỏ hàng   /      <span class="cart-price"><span class="woocommerce-Price-amount amount"><bdi>0<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></span>
+  </span>
+
+    <span class="cart-icon image-icon">
+    <strong>0</strong>
+  </span>
+  </a>
+
+ <ul class="nav-dropdown nav-dropdown-default">
+    <li class="html widget_shopping_cart">
+      <div class="widget_shopping_cart_content">
+        
+
+	<p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong giỏ hàng.</p>
+
+
+      </div>
+    </li>
+     </ul>
+
+</li>
+            </ul>
+          </div>
+
+          <!-- Mobile Right Elements -->
+          <div class="flex-col show-for-medium flex-right">
+            <ul class="mobile-nav nav nav-right ">
+              <li class="cart-item has-icon">
+
+      <a href="https://givasolar.com/cart/" class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Giỏ hàng" data-pos="right">
+  
+    <span class="cart-icon image-icon">
+    <strong>0</strong>
+  </span>
+  </a>
+
+
+  <!-- Cart Sidebar Popup -->
+  <div id="cart-popup" class="mfp-hide widget_shopping_cart">
+  <div class="cart-popup-inner inner-padding">
+      <div class="cart-popup-title text-center">
+          <h4 class="uppercase">Giỏ hàng</h4>
+          <div class="is-divider"></div>
+      </div>
+      <div class="widget_shopping_cart_content">
+          
+
+	<p class="woocommerce-mini-cart__empty-message">Chưa có sản phẩm trong giỏ hàng.</p>
+
+
+      </div>
+             <div class="cart-sidebar-content relative"></div>  </div>
+  </div>
+
+</li>
+            </ul>
+          </div>
+
+      </div>
+
+            <div class="container"><div class="top-divider full-width"></div></div>
+      </div>
+
+<div class="header-bg-container fill"><div class="header-bg-image fill"></div><div class="header-bg-color fill"></div></div>		</div>
+	</header>
+
+	<div class="shop-page-title category-page-title dark featured-title page-title ">
+
+	<div class="page-title-bg fill">
+		<div class="title-bg fill bg-fill" data-parallax-fade="true" data-parallax="-2" data-parallax-background data-parallax-container=".page-title"></div>
+		<div class="title-overlay fill"></div>
+	</div>
+
+	<div class="page-title-inner flex-row container medium-flex-wrap flex-has-center">
+	  <div class="flex-col">
+	  	&nbsp;
+	  </div>
+	  <div class="flex-col flex-center text-center">
+	  	  		<h1 class="shop-page-title is-xlarge">Đèn năng lượng mặt trời</h1>
+		<div class="is-smaller">
+	<nav class="woocommerce-breadcrumb breadcrumbs uppercase"><a href="https://givasolar.com/san-pham/">Sản Phẩm</a> <span class="divider">&#47;</span> Đèn năng lượng mặt trời</nav></div>
+<div class="category-filtering category-filter-row show-for-medium">
+	<a href="#" data-open="#shop-sidebar" data-visible-after="true" data-pos="left" class="filter-button uppercase plain">
+		<i class="icon-equalizer"></i>
+		<strong>Lọc</strong>
+	</a>
+	<div class="inline-block">
+			</div>
+</div>
+	  </div>
+	  <div class="flex-col flex-right text-right medium-text-center form-flat">
+	  	  <p class="woocommerce-result-count hide-for-medium">
+	Hiển thị 1&ndash;48 của 195 kết quả</p>
+	</form>
+	  </div>
+	</div>
+</div>
+
+	<main id="main" class="">
+<div class="row category-page-row">
+
+		<div class="col large-3 hide-for-medium ">
+						<div id="shop-sidebar" class="sidebar-inner col-inner">
+				<aside id="custom_html-5" class="widget_text widget widget_custom_html"><span class="widget-title shop-sidebar">DANH MỤC SẢN PHẨM</span><div class="is-divider small"></div><div class="textwidget custom-html-widget"><div style="line-height: 1;">
+
+<strong><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/">ĐÈN MẶT TRỜI</a></strong>
+<hr />
+<ul> 
+ 	<li><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-chieu-sang-duong-nang-luong-mat-troi/">Đèn Đường Cao Cấp</a></li>
+ 	<li><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-led-pha/">Đèn LED Pha</a></li>
+		<li><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-loi-di/">Đèn Trụ Sân Vườn</a></li>
+	<li><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-treo-tuong/">Đèn Treo Tường</a></li>
+ 	<li><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-cam-co/">Đèn Cắm Đất</a></li> 	
+ 	<li><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-tru-cong/">Đèn Trụ Cổng</a></li>
+ 	<li><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-bat-con-trung-bat-muoi/">Đèn Diệt Côn Trùng</a></li>
+		<li><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-tin-hieu-giao-thong/">Đèn Giao Thông</a></li>
+ 	<li><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-led-cam-tay/">Đèn Cầm Tay</a></li>
+</ul>
+<hr />
+<strong><a href="https://givasolar.com/danh-muc/den-trang-tri-san-vuon/">ĐÈN TRANG TRÍ</a></strong>
+	<hr />
+<strong><a href="https://givasolar.com/danh-muc/den-led-quang-hop/">ĐÈN LED TRỒNG CÂY</a></strong>
+<hr />
+<strong><a href="https://givasolar.com/danh-muc/den-pha-sac/">ĐÈN LED PHA SẠC</a></strong>
+<hr />
+<hr />
+<strong><a href="https://givasolar.com/danh-muc/he-thong-nang-luong-mat-troi/">LẮP ĐIỆN MẶT TRỜI</a></strong>
+<hr />
+<hr />
+<strong><a href="https://givasolar.com/danh-muc/tam-pin-nang-luong-mat-troi-cao-cap/">TẤM PIN MẶT TRỜI</a></strong>
+<hr />
+<ul> 	
+		<li><a href="https://givasolar.com/danh-muc/tam-pin-nang-luong-mat-troi-cao-cap/jinko-solar/">JINKO SOLAR</a></li>
+	<li><a href="https://givasolar.com/danh-muc/tam-pin-nang-luong-mat-troi-cao-cap/canadian/">CANADIAN SOLAR</a></li>
+<li><a href="https://givasolar.com/danh-muc/tam-pin-nang-luong-mat-troi-cao-cap/ae-solar/">AE SOLAR</a></li>
+	<li><a href="https://givasolar.com/danh-muc/tam-pin-nang-luong-mat-troi-cao-cap/longi/">LONGI SOLAR</a></li>
+</ul>
+<hr />
+<strong><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/">Biến Tần Solar</a></strong>
+<hr />
+<ul>
+<li><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/hoa-luoi/">Inverter Hòa Lưới</a></li>
+<li><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/hybrid/">Inverter Hybrid</a></li>
+<li><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/off-grid/">Inverter Off-Grid</a></li>
+<li><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/sofar/">Inverter SOFAR</a></li>
+		<li><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/huawei/">Inverter HUAWEI</a></li>
+	<li><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/sma/">Inverter SMA</a></li>
+	<li><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/deye/">Inverter DEYE</a></li>
+<li><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/canadian-solar/">Inverter CANADIAN</a></li>
+</ul><hr />
+<strong><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/">PHỤ KIỆN, LINH KIỆN</a></strong>
+<hr />
+	<ul>
+		<li>
+		<a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/kep-pin/">Ray Nhôm - Kẹp Pin</a></li>
+ 	<li>
+		<a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/tu-dien/">Tủ điện Solar</a></li>
+		<li><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/day-cap-dien/">Dây cáp điện</a></li>
+		<li><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/dau-noi-mc4/">Jack Nối MC4</a></li>
+		<li><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/cb-mccb/">CB, MCCB, Chống sét</a></li>
+	</ul>
+<hr />
+<strong><a href="https://givasolar.com/danh-muc/ac-quy-nang-luong-mat-troi/">ẮC QUY LƯU TRỮ ĐIỆN</a></strong>
+<hr />
+<strong><a href="https://givasolar.com/danh-muc/bo-dieu-khien-sac-nang-luong-mat-troi/">ĐIỀU KHIỂN SẠC</a></strong>
+<hr />
+<strong><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/may-kich-dien/">BỘ KÍCH ĐIỆN MINI</a></strong>
+<hr />
+<strong><a href="https://givasolar.com/danh-muc/he-thong-bom-nuoc-nang-luong-mat-troi/">HỆ THỐNG BƠM NƯỚC NLMT</a></strong><hr />
+<ul> 	<li><a href="https://givasolar.com/danh-muc/bien-tan-bom-nuoc/">INVERTER Bơm Nước</a></li></ul>
+
+</div></div></aside><aside id="woocommerce_price_filter-2" class="widget woocommerce widget_price_filter"><span class="widget-title shop-sidebar">Lọc theo giá</span><div class="is-divider small"></div>
+<form method="get" action="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/">
+	<div class="price_slider_wrapper">
+		<div class="price_slider" style="display:none;"></div>
+		<div class="price_slider_amount" data-step="10">
+			<label class="screen-reader-text" for="min_price">Giá thấp nhất</label>
+			<input type="text" id="min_price" name="min_price" value="0" data-min="0" placeholder="Giá thấp nhất" />
+			<label class="screen-reader-text" for="max_price">Giá cao nhất</label>
+			<input type="text" id="max_price" name="max_price" value="26265000" data-max="26265000" placeholder="Giá cao nhất" />
+						<button type="submit" class="button">Lọc</button>
+			<div class="price_label" style="display:none;">
+				Giá <span class="from"></span> &mdash; <span class="to"></span>
+			</div>
+						<div class="clear"></div>
+		</div>
+	</div>
+</form>
+
+</aside><aside id="woocommerce_products-2" class="widget woocommerce widget_products"><span class="widget-title shop-sidebar">Sản phẩm khuyến mãi</span><div class="is-divider small"></div><ul class="product_list_widget"><li>
+	
+	<a href="https://givasolar.com/san-pham/day-den-led-trang-tri-gv-05aa/">
+		<img width="100" height="100" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail" alt="" decoding="async" data-lazy-src="https://givasolar.com/wp-content/uploads/2018/11/day-den-led-trang-tri-gv-05AA.jpg" /><noscript><img width="100" height="100" src="https://givasolar.com/wp-content/uploads/2018/11/day-den-led-trang-tri-gv-05AA.jpg" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail" alt="" decoding="async" /></noscript>		<span class="product-title">Dây đèn Led trang trí GV-05AA (10m, 100 LED)</span>
+	</a>
+
+				
+	<del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>75,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>49,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins>
+	</li>
+<li>
+	
+	<a href="https://givasolar.com/san-pham/day-den-led-sieu-sang-trang-tri-su-kien-gv-ucsl/">
+		<img width="100" height="100" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail" alt="" decoding="async" data-lazy-src="https://givasolar.com/wp-content/uploads/2018/10/day-den-led-sieu-sang-gv-ucsl.jpg" /><noscript><img width="100" height="100" src="https://givasolar.com/wp-content/uploads/2018/10/day-den-led-sieu-sang-gv-ucsl.jpg" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail" alt="" decoding="async" /></noscript>		<span class="product-title">Dây đèn led siêu sáng GV-UCSL (10M-100LED -Đầu USB)</span>
+	</a>
+
+				
+	<del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>80,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>49,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins>
+	</li>
+<li>
+	
+	<a href="https://givasolar.com/san-pham/day-den-led-hinh-long-den-doc-dao-gv-lsl/">
+		<img width="100" height="100" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail" alt="" decoding="async" data-lazy-src="https://givasolar.com/wp-content/uploads/2018/10/day-den-led-hinh-long-den-doc-dao-gv-lsl.png" /><noscript><img width="100" height="100" src="https://givasolar.com/wp-content/uploads/2018/10/day-den-led-hinh-long-den-doc-dao-gv-lsl.png" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail" alt="" decoding="async" /></noscript>		<span class="product-title">Dây đèn led hình lồng đèn độc đáo chạy pin GV-LSL</span>
+	</a>
+
+				
+	<del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>180,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>99,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins>
+	</li>
+<li>
+	
+	<a href="https://givasolar.com/san-pham/day-den-led-bi-ngo-trang-tri-halloween-gv-phsl-1/">
+		<img width="100" height="100" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail" alt="" decoding="async" data-lazy-src="https://givasolar.com/wp-content/uploads/2018/10/day-den-led-bi-ngo-trang-tri-halloween-gv-phsl-1.png" /><noscript><img width="100" height="100" src="https://givasolar.com/wp-content/uploads/2018/10/day-den-led-bi-ngo-trang-tri-halloween-gv-phsl-1.png" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail" alt="" decoding="async" /></noscript>		<span class="product-title">Dây đèn led NLMT trang trí Halloween bí ngô GV-PHSL-1</span>
+	</a>
+
+				
+	<del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>150,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>99,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins>
+	</li>
+<li>
+	
+	<a href="https://givasolar.com/san-pham/day-den-led-bi-ngo-trang-tri-halloween-gv-phsl-3/">
+		<img width="100" height="100" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail" alt="" decoding="async" data-lazy-src="https://givasolar.com/wp-content/uploads/2018/10/day-den-led-bi-ngo-trang-tri-halloween-gv-phsl-3.png" /><noscript><img width="100" height="100" src="https://givasolar.com/wp-content/uploads/2018/10/day-den-led-bi-ngo-trang-tri-halloween-gv-phsl-3.png" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail" alt="" decoding="async" /></noscript>		<span class="product-title">Dây đèn led NLMT bí ngô trang trí Halloween GV-PHSL-3</span>
+	</a>
+
+				
+	<del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>180,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>99,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins>
+	</li>
+</ul></aside>			</div>
+					</div>
+
+		<div class="col large-9">
+		<div class="shop-container">
+
+		
+<div class="woocommerce-notices-wrapper"></div><div class="products row row-small large-columns-4 medium-columns-3 small-columns-2 has-equal-box-heights">
+<div class="product-small col has-hover product type-product post-16265 status-publish first instock product_cat-den-tru-cong product_cat-den-loi-di has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
+	<div class="col-inner">
+	
+<div class="badge-container absolute left top z-1">
+<div class="callout badge badge-circle"><div class="badge-inner secondary on-sale"><span class="onsale">-17%</span></div></div>
+</div>
+	<div class="product-small box ">
+		<div class="box-image">
+			<div class="image-fade_in_back">
+				<a href="https://givasolar.com/san-pham/den-tru-nang-luong-mat-troi-gv-gdl212/" aria-label="Đèn trụ chiếu sáng sân vườn năng lượng mặt trời GV-GDL212">
+					<img width="700" height="700" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20700%20700'%3E%3C/svg%3E" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" fetchpriority="high" data-lazy-src="https://givasolar.com/wp-content/uploads/2019/05/den-san-vuon-luong-nang-luong-mat-troi-gv-gdl212.png" /><noscript><img width="700" height="700" src="https://givasolar.com/wp-content/uploads/2019/05/den-san-vuon-luong-nang-luong-mat-troi-gv-gdl212.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" fetchpriority="high" /></noscript>				</a>
+			</div>
+			<div class="image-tools is-small top right show-on-hover">
+							</div>
+			<div class="image-tools is-small hide-for-small bottom left show-on-hover">
+							</div>
+			<div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+							</div>
+					</div>
+
+		<div class="box-text box-text-products text-center grid-style-2">
+			<div class="title-wrapper"><h3 class="name product-title woocommerce-loop-product__title"><a href="https://givasolar.com/san-pham/den-tru-nang-luong-mat-troi-gv-gdl212/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Đèn trụ chiếu sáng sân vườn năng lượng mặt trời GV-GDL212</a></h3></div><div class="price-wrapper">
+	<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>1,150,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>950,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
+</div><div class="add-to-cart-button"><a href="?add-to-cart=16265" data-quantity="1" class="primary is-small mb-0 button product_type_simple add_to_cart_button ajax_add_to_cart is-outline" data-product_id="16265" data-product_sku="" aria-label="Thêm &ldquo;Đèn trụ chiếu sáng sân vườn năng lượng mặt trời GV-GDL212&rdquo; vào giỏ hàng" aria-describedby="" rel="nofollow">Thêm vào giỏ hàng</a></div>		</div>
+	</div>
+		</div>
+		
+</div><div class="product-small col has-hover product type-product post-10659 status-publish instock product_cat-den-chieu-sang-duong-nang-luong-mat-troi product_cat-den-nang-luong-mat-troi has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
+	<div class="col-inner">
+	
+<div class="badge-container absolute left top z-1">
+<div class="callout badge badge-circle"><div class="badge-inner secondary on-sale"><span class="onsale">-36%</span></div></div>
+</div>
+	<div class="product-small box ">
+		<div class="box-image">
+			<div class="image-fade_in_back">
+				<a href="https://givasolar.com/san-pham/bo-den-chieu-sang-duong-nang-luong-mat-troi-gv-sl56/" aria-label="Đèn đường LED chiếu sáng năng lượng mặt trời GV-SL56 30W">
+					<img width="700" height="700" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20700%20700'%3E%3C/svg%3E" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="đèn chiếu sáng đường năng lượng mặt trời GV-SL56" decoding="async" data-lazy-src="https://givasolar.com/wp-content/uploads/2018/11/den-luong-nang-luong-mat-troi-gv-sl56.jpg" /><noscript><img width="700" height="700" src="https://givasolar.com/wp-content/uploads/2018/11/den-luong-nang-luong-mat-troi-gv-sl56.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="đèn chiếu sáng đường năng lượng mặt trời GV-SL56" decoding="async" /></noscript>				</a>
+			</div>
+			<div class="image-tools is-small top right show-on-hover">
+							</div>
+			<div class="image-tools is-small hide-for-small bottom left show-on-hover">
+							</div>
+			<div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+							</div>
+					</div>
+
+		<div class="box-text box-text-products text-center grid-style-2">
+			<div class="title-wrapper"><h3 class="name product-title woocommerce-loop-product__title"><a href="https://givasolar.com/san-pham/bo-den-chieu-sang-duong-nang-luong-mat-troi-gv-sl56/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Đèn đường LED chiếu sáng năng lượng mặt trời GV-SL56 30W</a></h3></div><div class="price-wrapper">
+	<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>2,490,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>1,590,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
+</div><div class="add-to-cart-button"><a href="?add-to-cart=10659" data-quantity="1" class="primary is-small mb-0 button product_type_simple add_to_cart_button ajax_add_to_cart is-outline" data-product_id="10659" data-product_sku="" aria-label="Thêm &ldquo;Đèn đường LED chiếu sáng năng lượng mặt trời GV-SL56 30W&rdquo; vào giỏ hàng" aria-describedby="" rel="nofollow">Thêm vào giỏ hàng</a></div>		</div>
+	</div>
+		</div>
+</div><div class="product-small col has-hover product type-product post-6983 status-publish instock product_cat-den-nang-luong-mat-troi product_cat-den-loi-di has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
+	<div class="col-inner">
+	
+<div class="badge-container absolute left top z-1">
+<div class="callout badge badge-circle"><div class="badge-inner secondary on-sale"><span class="onsale">-19%</span></div></div>
+</div>
+	<div class="product-small box ">
+		<div class="box-image">
+			<div class="image-fade_in_back">
+				<a href="https://givasolar.com/san-pham/den-san-vuon-nang-luong-mat-troi-gv-0741a4-01/" aria-label="Đèn trụ năng lượng mặt trời sân vườn chống nước GV-GDL0741">
+					<img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" data-lazy-src="https://givasolar.com/wp-content/uploads/2018/06/den-san-vuon-nang-luong-mat-troi-gv-0741a4-01.png" /><noscript><img width="600" height="600" src="https://givasolar.com/wp-content/uploads/2018/06/den-san-vuon-nang-luong-mat-troi-gv-0741a4-01.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" /></noscript>				</a>
+			</div>
+			<div class="image-tools is-small top right show-on-hover">
+							</div>
+			<div class="image-tools is-small hide-for-small bottom left show-on-hover">
+							</div>
+			<div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+							</div>
+					</div>
+
+		<div class="box-text box-text-products text-center grid-style-2">
+			<div class="title-wrapper"><h3 class="name product-title woocommerce-loop-product__title"><a href="https://givasolar.com/san-pham/den-san-vuon-nang-luong-mat-troi-gv-0741a4-01/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Đèn trụ năng lượng mặt trời sân vườn chống nước GV-GDL0741</a></h3></div><div class="price-wrapper">
+	<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>1,790,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>1,450,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
+</div><div class="add-to-cart-button"><a href="?add-to-cart=6983" data-quantity="1" class="primary is-small mb-0 button product_type_simple add_to_cart_button ajax_add_to_cart is-outline" data-product_id="6983" data-product_sku="" aria-label="Thêm &ldquo;Đèn trụ năng lượng mặt trời sân vườn chống nước GV-GDL0741&rdquo; vào giỏ hàng" aria-describedby="" rel="nofollow">Thêm vào giỏ hàng</a></div>		</div>
+	</div>
+		</div>
+</div><div class="product-small col has-hover product type-product post-11708 status-publish last instock product_cat-den-cam-co product_cat-den-nang-luong-mat-troi product_cat-den-led-trang-tri-noel has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
+	<div class="col-inner">
+	
+<div class="badge-container absolute left top z-1">
+<div class="callout badge badge-circle"><div class="badge-inner secondary on-sale"><span class="onsale">-29%</span></div></div>
+</div>
+	<div class="product-small box ">
+		<div class="box-image">
+			<div class="image-fade_in_back">
+				<a href="https://givasolar.com/san-pham/den-ngon-duoc-nang-luong-mat-troi-gv-pl-st20-3w/" aria-label="Đèn ngọn đuốc sử dụng năng lượng mặt trời GV-PL-ST30">
+					<img width="700" height="700" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20700%20700'%3E%3C/svg%3E" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" data-lazy-src="https://givasolar.com/wp-content/uploads/2018/12/Den-ngon-duoc-trang-tri-nang-luong-mat-troi-gv-pl30-3w.jpg" /><noscript><img width="700" height="700" src="https://givasolar.com/wp-content/uploads/2018/12/Den-ngon-duoc-trang-tri-nang-luong-mat-troi-gv-pl30-3w.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" /></noscript>				</a>
+			</div>
+			<div class="image-tools is-small top right show-on-hover">
+							</div>
+			<div class="image-tools is-small hide-for-small bottom left show-on-hover">
+							</div>
+			<div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+							</div>
+					</div>
+
+		<div class="box-text box-text-products text-center grid-style-2">
+			<div class="title-wrapper"><h3 class="name product-title woocommerce-loop-product__title"><a href="https://givasolar.com/san-pham/den-ngon-duoc-nang-luong-mat-troi-gv-pl-st20-3w/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Đèn ngọn đuốc sử dụng năng lượng mặt trời GV-PL-ST30</a></h3></div><div class="price-wrapper">
+	<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>550,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>389,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
+</div><div class="add-to-cart-button"><a href="?add-to-cart=11708" data-quantity="1" class="primary is-small mb-0 button product_type_simple add_to_cart_button ajax_add_to_cart is-outline" data-product_id="11708" data-product_sku="" aria-label="Thêm &ldquo;Đèn ngọn đuốc sử dụng năng lượng mặt trời GV-PL-ST30&rdquo; vào giỏ hàng" aria-describedby="" rel="nofollow">Thêm vào giỏ hàng</a></div>		</div>
+	</div>
+		</div>
+</div><div class="product-small col has-hover product type-product post-7084 status-publish first instock product_cat-den-cam-co product_cat-den-nang-luong-mat-troi product_cat-den-led-trang-tri-noel has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
+	<div class="col-inner">
+	
+<div class="badge-container absolute left top z-1">
+<div class="callout badge badge-circle"><div class="badge-inner secondary on-sale"><span class="onsale">-15%</span></div></div>
+</div>
+	<div class="product-small box ">
+		<div class="box-image">
+			<div class="image-fade_in_back">
+				<a href="https://givasolar.com/san-pham/den-ngon-lua-trang-tri-nang-luong-mat-troi-gv-stl/" aria-label="Đèn ngọn lửa trang trí năng lượng mặt trời GV-PL-STL">
+					<img width="700" height="700" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20700%20700'%3E%3C/svg%3E" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" data-lazy-src="https://givasolar.com/wp-content/uploads/2022/10/den-lua-tron-nang-luong-mat-troi.jpg" /><noscript><img width="700" height="700" src="https://givasolar.com/wp-content/uploads/2022/10/den-lua-tron-nang-luong-mat-troi.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" /></noscript>				</a>
+			</div>
+			<div class="image-tools is-small top right show-on-hover">
+							</div>
+			<div class="image-tools is-small hide-for-small bottom left show-on-hover">
+							</div>
+			<div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+							</div>
+					</div>
+
+		<div class="box-text box-text-products text-center grid-style-2">
+			<div class="title-wrapper"><h3 class="name product-title woocommerce-loop-product__title"><a href="https://givasolar.com/san-pham/den-ngon-lua-trang-tri-nang-luong-mat-troi-gv-stl/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Đèn ngọn lửa trang trí năng lượng mặt trời GV-PL-STL</a></h3></div><div class="price-wrapper">
+	<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>460,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>389,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
+</div><div class="add-to-cart-button"><a href="?add-to-cart=7084" data-quantity="1" class="primary is-small mb-0 button product_type_simple add_to_cart_button ajax_add_to_cart is-outline" data-product_id="7084" data-product_sku="" aria-label="Thêm &ldquo;Đèn ngọn lửa trang trí năng lượng mặt trời GV-PL-STL&rdquo; vào giỏ hàng" aria-describedby="" rel="nofollow">Thêm vào giỏ hàng</a></div>		</div>
+	</div>
+		</div>
+</div><div class="product-small col has-hover product type-product post-10435 status-publish instock product_cat-den-nang-luong-mat-troi product_cat-den-led-trang-tri-noel product_cat-den-treo-tuong has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
+	<div class="col-inner">
+	
+<div class="badge-container absolute left top z-1">
+<div class="callout badge badge-circle"><div class="badge-inner secondary on-sale"><span class="onsale">-20%</span></div></div>
+</div>
+	<div class="product-small box ">
+		<div class="box-image">
+			<div class="image-fade_in_back">
+				<a href="https://givasolar.com/san-pham/den-op-tuong-nang-luong-mat-troi-gv-wl33/" aria-label="Đèn gắn tường trang trí năng lượng mặt trời GV-WL33 đẹp">
+					<img width="700" height="700" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20700%20700'%3E%3C/svg%3E" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" data-lazy-src="https://givasolar.com/wp-content/uploads/2018/11/den-op-tuong-nang-luong-mat-troi-gv-wl33.jpg" /><noscript><img width="700" height="700" src="https://givasolar.com/wp-content/uploads/2018/11/den-op-tuong-nang-luong-mat-troi-gv-wl33.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" /></noscript>				</a>
+			</div>
+			<div class="image-tools is-small top right show-on-hover">
+							</div>
+			<div class="image-tools is-small hide-for-small bottom left show-on-hover">
+							</div>
+			<div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+							</div>
+					</div>
+
+		<div class="box-text box-text-products text-center grid-style-2">
+			<div class="title-wrapper"><h3 class="name product-title woocommerce-loop-product__title"><a href="https://givasolar.com/san-pham/den-op-tuong-nang-luong-mat-troi-gv-wl33/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Đèn gắn tường trang trí năng lượng mặt trời GV-WL33 đẹp</a></h3></div><div class="price-wrapper">
+	<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>155,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del> <ins><span class="woocommerce-Price-amount amount"><bdi>124,000<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins></span>
+</div><div class="add-to-cart-button"><a href="?add-to-cart=10435" data-quantity="1" class="primary is-small mb-0 button product_type_simple add_to_cart_button ajax_add_to_cart is-outline" data-product_id="10435" data-product_sku="" aria-label="Thêm &ldquo;Đèn gắn tường trang trí năng lượng mặt trời GV-WL33 đẹp&rdquo; vào giỏ hàng" aria-describedby="" rel="nofollow">Thêm vào giỏ hàng</a></div>		</div>
+	</div>
+		</div>
+</div></div><!-- row -->
+<div class="container">
+<nav class="woocommerce-pagination">
+	<ul class="page-numbers nav-pagination links text-center"><li><span aria-current="page" class="page-number current">1</span></li><li><a class="page-number" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/page/2/">2</a></li><li><a class="page-number" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/page/3/">3</a></li><li><a class="page-number" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/page/4/">4</a></li><li><a class="page-number" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/page/5/">5</a></li><li><a class="next page-number" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/page/2/"><i class="icon-angle-right"></i></a></li></ul></nav>
+</div>
+</div>
+		</div><!-- shop container -->
+		</div>
+</div>
+
+</main>
+
+<footer id="footer" class="footer-wrapper">
+
+	
+<!-- FOOTER 1 -->
+<div class="footer-widgets footer footer-1">
+		<div class="row large-columns-3 mb-0">
+	   		<div id="custom_html-2" class="widget_text col pb-0 widget widget_custom_html"><span class="widget-title">SHOWROOM GIVASOLAR</span><div class="is-divider small"></div><div class="textwidget custom-html-widget"><div class="contact">
+	<i class="icon-map-pin-fill" style="font-size:10;"></i> <b>Địa Chỉ:</b> 102/39 Phan Huy Ích, Phường 15, Q. Tân Bình, TP. HCM 700000
+</div>
+
+<hr>
+
+<div class="phone">
+	<i class="icon-phone" style="font-size:10;"></i> <b>HOTLINE:</b> 0934 013 083 - 0909 636 011
+</div>
+
+<hr>
+
+<div class="mail">
+	<i class="icon-envelop" style="font-size:10;"></i> <b>MAIL:</b>		 givasolar@gmail.com
+</div>
+
+<hr>
+
+<div class="hours">
+	<i class="icon-clock" style="font-size:10;"> <b>GIỜ:</b> </i>	 08:00 - 17:00
+</div>
+</div></div><div id="custom_html-3" class="widget_text col pb-0 widget widget_custom_html"><span class="widget-title">HỆ THỐNG CHI NHÁNH</span><div class="is-divider small"></div><div class="textwidget custom-html-widget"><b>CHI NHÁNH CỦ CHI:</b> Xã An Nhơn Tây, Huyện Củ Chi, TPHCM
+<div class="phone">
+	<i class="icon-phone" style="font-size:10;"></i> <b>HOTLINE:</b> 0934 013 083
+</div>
+<hr>
+<b>CHI NHÁNH CẦN THƠ:</b> 28 Trần Việt Châu, An Hòa, Ninh Kiều
+<div class="phone">
+	<i class="icon-phone" style="font-size:10;"></i> <b>HOTLINE:</b> 0988 276 771
+</div>
+<hr>
+<b>CHI NHÁNH BÀ RỊA – VŨNG TÀU:</b> Xã Láng Lớn, Huyện Châu Đức<div class="phone">
+	<i class="icon-phone" style="font-size:10;"></i> <b>HOTLINE:</b> 0932 123 482
+</div></div></div><div id="custom_html-4" class="widget_text col pb-0 widget widget_custom_html"><span class="widget-title">GIẤY PHÉP ĐKKD</span><div class="is-divider small"></div><div class="textwidget custom-html-widget"><b>Công ty TNHH TMDV XNK Gia Văn</b><hr>
+Giấy phép đăng kí Kinh doanh số: 0313696473 do Sở KHĐT Hồ Chí Minh cấp ngày: 15/03/2016. <hr>
+Địa chỉ: 212/20 Đường Gót Chàng, Ấp Gót Chàng, Xã An Nhơn Tây, Huyện Củ Chi, Thành phố Hồ Chí Minh, Việt Nam.<hr>
+<a href="http://online.gov.vn/CustomWebsiteDisplay.aspx?DocId=48682" rel="nofollow"><img width="200" height="76" class="alignnone" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%2076'%3E%3C/svg%3E" alt="" data-lazy-src="https://givasolar.com/wp-content/uploads/2018/11/dathongbao-1.png" /><noscript><img width="200" height="76" class="alignnone" src="https://givasolar.com/wp-content/uploads/2018/11/dathongbao-1.png" alt="" /></noscript></a></div></div>		</div>
+</div>
+
+<!-- FOOTER 2 -->
+
+
+
+<div class="absolute-footer dark medium-text-center text-center">
+  <div class="container clearfix">
+
+    
+    <div class="footer-primary pull-left">
+            <div class="copyright-footer">
+        Copyright 2023 © <strong>Designed by DUC</strong>      </div>
+          </div>
+  </div>
+</div>
+
+<a href="#top" class="back-to-top button icon invert plain fixed bottom z-1 is-outline hide-for-medium circle" id="top-link" aria-label="Go to top"><i class="icon-angle-up" ></i></a>
+
+</footer>
+
+</div>
+
+<div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">
+
+	
+	<div class="sidebar-menu no-scrollbar ">
+
+		
+					<ul class="nav nav-sidebar nav-vertical nav-uppercase" data-tab="1">
+				<li class="header-search-form search-form html relative has-icon">
+	<div class="header-search-form-wrapper">
+		<div class="searchform-wrapper ux-search-box relative form-flat is-normal"><form role="search" method="get" class="searchform" action="https://givasolar.com/">
+	<div class="flex-row relative">
+						<div class="flex-col flex-grow">
+			<label class="screen-reader-text" for="woocommerce-product-search-field-1">Tìm kiếm:</label>
+			<input type="search" id="woocommerce-product-search-field-1" class="search-field mb-0" placeholder="Tìm kiếm&hellip;" value="" name="s" />
+			<input type="hidden" name="post_type" value="product" />
+					</div>
+		<div class="flex-col">
+			<button type="submit" value="Tìm kiếm" class="ux-search-submit submit-button secondary button  icon mb-0" aria-label="Submit">
+				<i class="icon-search" ></i>			</button>
+		</div>
+	</div>
+	<div class="live-search-results text-left z-top"></div>
+</form>
+</div>	</div>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-14285"><a title="												" href="https://givasolar.com/">Trang Chủ</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14286"><a title="												" href="https://givasolar.com/gioi-thieu/">Giới Thiệu</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14284"><a title="												" href="https://givasolar.com/lien-he/">Liên Hệ</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-14290"><a title="						" href="https://givasolar.com/san-pham/">Sản Phẩm</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-menu-item menu-item-has-children menu-item-14263"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/" aria-current="page">Đèn LED Mặt Trời</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14265"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-chieu-sang-duong-nang-luong-mat-troi/">Đèn Đường</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14264"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-led-pha/">Đèn Led Pha</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14272"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-treo-tuong/">Đèn Treo Tường</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14266"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-tru-cong/">Đèn Gắn Trụ Cổng</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14277"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-loi-di/">Đèn Trụ Sân Vườn</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14275"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-cam-co/">Đèn Cắm Đất</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14281"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-am-san-am-dat/">Đèn Âm Đất</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14274"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-bat-con-trung-bat-muoi/">Đèn Diệt Côn Trùng</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-19587"><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-led-cam-tay/">Đèn Cầm Tay</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-18628"><a href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/den-tin-hieu-giao-thong/">Đèn Tín Hiệu Giao thông</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14271"><a title="						">Sản Phẩm Khác</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14269"><a title="						" href="https://givasolar.com/danh-muc/den-trang-tri-san-vuon/">Đèn, dây đèn LED trang trí</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14273"><a title="						" href="https://givasolar.com/danh-muc/den-led-quang-hop/">Đèn Led trồng cây</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-19588"><a href="https://givasolar.com/danh-muc/den-pha-sac/">Đèn Pha Sạc</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14280"><a title="						" href="https://givasolar.com/danh-muc/san-pham-ung-dung-sinh-hoat-nlmt/camera-nang-luong-mat-troi/">Camera năng lượng mặt trời</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-23868"><a href="https://givasolar.com/san-pham/quat-chay-bang-nang-luong-mat-troi-gv-dq1800/">Quạt Năng Lượng Mặt Trời</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14279"><a title="						" href="https://givasolar.com/danh-muc/san-pham-ung-dung-sinh-hoat-nlmt/balo-nang-luong-mat-troi/">Balo năng lượng mặt trời</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-14291"><a title="						" href="https://givasolar.com/san-pham/du-nang-luong-mat-troi-humbrella-kem-den-chieu-sang/">Dù năng lượng mặt trời</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14288"><a title="						" href="https://givasolar.com/danh-muc/den-nang-luong-mat-troi/cot-den/">Gia Công Các mẫu Trụ Đèn</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-18036"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/">Inverter Solar</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-30719"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/hoa-luoi/">Inverter Hòa Lưới (Bám tải)</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-30720"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/hybrid/">Inverter Hybrid</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-30721"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/off-grid/">Inverter Off Grid</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-30722"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/sofar/">Inverter Hãng Sofar</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-33033"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/huawei/">Inverter Huawei</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-32131"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/deye/">Inverter Hybrid DEYE</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-30718"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/canadian-solar/">Inverter Canadian</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-32966"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/sma/">Inverter SMA</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-22198"><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/">Linh Kiện Lắp Đặt</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14268"><a title="						" href="https://givasolar.com/danh-muc/tam-pin-nang-luong-mat-troi-cao-cap/">Pin Năng Lượng Mặt Trời</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-18035"><a href="https://givasolar.com/danh-muc/bo-dieu-khien-sac-nang-luong-mat-troi/">Bộ điều khiển sạc</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-30717"><a href="https://givasolar.com/danh-muc/bo-kich-dien-inverter/may-kich-dien/">Bộ kích điện mini</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-22892"><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/">Phụ kiện: CB, MC4, Cáp&#8230;</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-32843"><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/kep-pin/">Kẹp pin &#8211; Rail Nhôm</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-25766"><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/day-cap-dien/">Dây cáp điện Solar</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-25767"><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/tu-dien/">Tủ điện SOLAR</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-28908"><a href="https://givasolar.com/danh-muc/phu-kien-lap-dat-dien-mat-troi/cb-mccb/">CB, chống sét, MCCB</a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14270"><a title="						" href="https://givasolar.com/danh-muc/ac-quy-nang-luong-mat-troi/">Bình lưu trữ điện</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-18841"><a href="https://givasolar.com/danh-muc/he-thong-bom-nuoc-nang-luong-mat-troi/">Hệ thống bơm nước</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-18842"><a href="https://givasolar.com/danh-muc/bien-tan-bom-nuoc/">Biến tần cho máy bơm</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-14292"><a title="						" href="https://givasolar.com/san-pham/may-bom-nuoc-nang-luong-mat-troi-gv-wp12v/">Máy bơm nước mặt trời</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-30583"><a>Lắp đặt</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-14267"><a title="						" href="https://givasolar.com/danh-muc/he-thong-nang-luong-mat-troi/">Hòa Lưới (On-Grid)</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31923"><a href="https://givasolar.com/zero-export/">Zero Export &#8211; Hòa lưới bám tải</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30584"><a href="https://givasolar.com/he-thong-dien-nang-luong-mat-troi-hoa-luoi-co-luu-tru-hybrid/">Hòa Lưới Lưu Trữ (Hybrid)</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-32024"><a href="https://givasolar.com/danh-muc/dien-mat-troi-mini/">Combo điện mặt trời MINI</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-14283"><a title="												" href="https://givasolar.com/tin-tuc/">Tin Tức</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14282"><a title="												" href="https://givasolar.com/category/du-an/">DỰ ÁN</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-14287"><a title="												" href="https://givasolar.com/chinh-sach/">Chính Sách</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14289"><a title="						" href="https://givasolar.com/giao-hang-thanh-toan/">Giao hàng – Thanh toán</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34422"><a href="https://givasolar.com/trung-tam-bao-hanh/">Trung Tâm Bảo Hành SOFAR</a></li>
+<li class="account-item has-icon menu-item">
+<a href="https://givasolar.com/my-account/"
+    class="nav-top-link nav-top-not-logged-in">
+    <span class="header-account-title">
+    Đăng nhập  </span>
+</a>
+
+</li>
+			</ul>
+		
+		
+	</div>
+
+	
+</div>
+		<!-- if gom all in one show -->
+				<div id="button-contact-vr" class="">
+			<div id="gom-all-in-one"><!-- v3 -->
+				
+								
+				
+				
+				
+				
+				
+								
+								
+								
+				
+								<!-- zalo -->
+				<div id="zalo-vr" class="button-contact">
+					<div class="phone-vr">
+						<div class="phone-vr-circle-fill"></div>
+						<div class="phone-vr-img-circle">
+							<a target="_blank" href="https://zalo.me/0909636011">				
+								<img width="100" height="95" alt="Zalo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%2095'%3E%3C/svg%3E" data-lazy-src="https://givasolar.com/wp-content/plugins/button-contact-vr/img/zalo.png" /><noscript><img width="100" height="95" alt="Zalo" src="https://givasolar.com/wp-content/plugins/button-contact-vr/img/zalo.png" /></noscript>
+							</a>
+						</div>
+					</div>
+					</div>
+				<!-- end zalo -->
+				
+				
+								<!-- Phone -->
+				<div id="phone-vr" class="button-contact">
+					<div class="phone-vr">
+						<div class="phone-vr-circle-fill"></div>
+						<div class="phone-vr-img-circle">
+							<a href="tel:0909636011">				
+								<img width="50" height="50" alt="Phone" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2050%2050'%3E%3C/svg%3E" data-lazy-src="https://givasolar.com/wp-content/plugins/button-contact-vr/img/phone.png" /><noscript><img width="50" height="50" alt="Phone" src="https://givasolar.com/wp-content/plugins/button-contact-vr/img/phone.png" /></noscript>
+							</a>
+						</div>
+					</div>
+					</div>
+											<div class="phone-bar phone-bar-n">
+							<a href="tel:0909636011">
+								<span class="text-phone">0909 636 011</span>
+							</a>
+						</div>
+									<!-- end phone -->
+
+															</div><!-- end v3 class gom-all-in-one -->
+
+			
+		</div>
+<!-- popup form -->
+<div id="popup-form-contact-vr">
+	<div class="bg-popup-vr"></div>
+	<div class="content-popup-vr" id="loco-" style=" ">
+		
+		<div class="content-popup-div-vr">
+									
+		</div>	
+
+		
+		<div class="close-popup-vr">x</div>
+	</div>
+</div>
+
+<!-- Add custom css and js -->
+	<style type="text/css">
+			</style>
+	<!-- end Add custom css and js -->
+<!-- popup showroom -->
+<div id="popup-showroom-vr">
+	<div class="bg-popup-vr"></div>
+	<div class="content-popup-vr" id="loco-" style=" ">
+		
+		<div class="content-popup-div-vr">
+						
+		</div>	
+		<div class="close-popup-vr">x</div>
+	</div>
+</div>
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+	jQuery(document).ready(function($){
+	    $('#all-in-one-vr').click(function(){
+		    $('#button-contact-vr').toggleClass('active');
+		})
+	    $('#contact-form-vr').click(function(){
+		    $('#popup-form-contact-vr').addClass('active');
+		})
+		$('div#popup-form-contact-vr .bg-popup-vr,div#popup-form-contact-vr .content-popup-vr .close-popup-vr').click(function(){
+			$('#popup-form-contact-vr').removeClass('active');
+		})
+	    $('#contact-showroom').click(function(){
+		    $('#popup-showroom-vr').addClass('active');
+		})
+		$('div#popup-showroom-vr .bg-popup-vr,.content-popup-vr .close-popup-vr').click(function(){
+			$('#popup-showroom-vr').removeClass('active');
+		})
+	});
+</script>
+<!-- end popup form -->
+
+			<!-- Facebook Messenger -->
+			
+		
+							<!-- color phone -->
+				<style>
+					.phone-bar a,#phone-vr .phone-vr-circle-fill,#phone-vr .phone-vr-img-circle,#phone-vr .phone-bar a {
+					    background-color: #d50000;
+					}
+					#phone-vr .phone-vr-circle-fill {
+					    opacity: 0.7;box-shadow: 0 0 0 0 #d50000;
+					}
+					.phone-bar2 a,#phone-vr2 .phone-vr-circle-fill,#phone-vr2 .phone-vr-img-circle,#phone-vr2 .phone-bar a {
+					    background-color: ;
+					}
+					#phone-vr2 .phone-vr-circle-fill {
+					    opacity: 0.7;box-shadow: 0 0 0 0 ;
+					}
+					.phone-bar3 a,#phone-vr3 .phone-vr-circle-fill,#phone-vr3 .phone-vr-img-circle,#phone-vr3 .phone-bar a {
+					    background-color: ;
+					}
+					#phone-vr3 .phone-vr-circle-fill {
+					    opacity: 0.7;box-shadow: 0 0 0 0 ;
+					}
+				</style>
+				<!-- color phone -->
+					
+			
+		
+		
+				
+		
+		
+		
+		
+				<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5N5M28"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script type="rocketlazyloadscript">
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v8.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="307831326377802">
+      </div>
+
+    <div id="login-form-popup" class="lightbox-content mfp-hide">
+            	<div class="woocommerce">
+      		<div class="woocommerce-notices-wrapper"></div>
+<div class="account-container lightbox-inner">
+
+	
+			<div class="account-login-inner">
+
+				<h3 class="uppercase">Đăng nhập</h3>
+
+				<form class="woocommerce-form woocommerce-form-login login" method="post">
+
+					
+					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+						<label for="username">Tên tài khoản hoặc địa chỉ email&nbsp;<span class="required">*</span></label>
+						<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="" />					</p>
+					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+						<label for="password">Mật khẩu&nbsp;<span class="required">*</span></label>
+						<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" />
+					</p>
+
+					
+					<p class="form-row">
+						<label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+							<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span>Ghi nhớ mật khẩu</span>
+						</label>
+						<input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="6f607ef5cb" /><input type="hidden" name="_wp_http_referer" value="/danh-muc/den-nang-luong-mat-troi/" />						<button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="Đăng nhập">Đăng nhập</button>
+					</p>
+					<p class="woocommerce-LostPassword lost_password">
+						<a href="https://givasolar.com/my-account/lost-password/">Quên mật khẩu?</a>
+					</p>
+
+					
+				</form>
+			</div>
+
+			
+</div>
+
+		</div>
+      	    </div>
+  <script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"S\u1ea3n Ph\u1ea9m","@id":"https:\/\/givasolar.com\/san-pham\/"}},{"@type":"ListItem","position":2,"item":{"name":"\u0110\u00e8n n\u0103ng l\u01b0\u1ee3ng m\u1eb7t tr\u1eddi","@id":"https:\/\/givasolar.com\/danh-muc\/den-nang-luong-mat-troi\/"}}]}</script>	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<script type="text/javascript" id="toc-front-js-extra">
+/* <![CDATA[ */
+var tocplus = {"visibility_show":"show","visibility_hide":"hide","width":"Auto"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/plugins/table-of-contents-plus/front.min.js?ver=2309" id="toc-front-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.8.2.1" id="jquery-blockui-js" defer></script>
+<script type="text/javascript" id="wc-add-to-cart-js-extra">
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"Xem gi\u1ecf h\u00e0ng","cart_url":"https:\/\/givasolar.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=8.2.1" id="wc-add-to-cart-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.8.2.1" id="js-cookie-js" defer></script>
+<script type="text/javascript" id="woocommerce-js-extra">
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=8.2.1" id="woocommerce-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/checkout\/|\/cart\/|\/my-account\/|\/wc-api\/v(.*)|\/(index\\.php\/)?(.*)wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/givasolar.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-includes/js/hoverIntent.min.js?ver=1.10.2" id="hoverIntent-js" defer></script>
+<script type="text/javascript" id="flatsome-js-js-extra">
+/* <![CDATA[ */
+var flatsomeVars = {"theme":{"version":"3.17.6"},"ajaxurl":"https:\/\/givasolar.com\/wp-admin\/admin-ajax.php","rtl":"","sticky_height":"70","stickyHeaderHeight":"0","scrollPaddingTop":"0","assets_url":"https:\/\/givasolar.com\/wp-content\/themes\/flatsome\/assets\/","lightbox":{"close_markup":"<button title=\"%title%\" type=\"button\" class=\"mfp-close\"><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"><\/line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"><\/line><\/svg><\/button>","close_btn_inside":false},"user":{"can_edit_pages":false},"i18n":{"mainMenu":"Main Menu","toggleButton":"Toggle"},"options":{"cookie_notice_version":"1","swatches_layout":false,"swatches_disable_deselect":false,"swatches_box_select_event":false,"swatches_box_behavior_selected":false,"swatches_box_update_urls":"1","swatches_box_reset":false,"swatches_box_reset_limited":false,"swatches_box_reset_extent":false,"swatches_box_reset_time":300,"search_result_latency":"0"},"is_mini_cart_reveal":"1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/cache/min/1/wp-content/themes/flatsome/assets/js/flatsome.js?ver=1695961045" id="flatsome-js-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/cache/min/1/wp-content/themes/flatsome/inc/integrations/wp-rocket/flatsome-wp-rocket.js?ver=1695961045" id="flatsome-wp-rocket-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/cache/min/1/wp-content/themes/flatsome/inc/extensions/flatsome-live-search/flatsome-live-search.js?ver=1695961045" id="flatsome-live-search-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/cache/min/1/wp-content/themes/flatsome/assets/js/woocommerce.js?ver=1695961045" id="flatsome-theme-woocommerce-js-js" defer></script>
+<!--[if IE]>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/intersection-observer-polyfill@0.1.0/dist/IntersectionObserver.js?ver=0.1.0" id="intersection-observer-polyfill-js"></script>
+<![endif]-->
+<script type="text/javascript" id="wc-cart-fragments-js-extra">
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_775c6be35be93c428e6bf5efee96e7f0","fragment_name":"wc_fragments_775c6be35be93c428e6bf5efee96e7f0","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=8.2.1" id="wc-cart-fragments-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" id="jquery-ui-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-includes/js/jquery/ui/mouse.min.js?ver=1.13.2" id="jquery-ui-mouse-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-includes/js/jquery/ui/slider.min.js?ver=1.13.2" id="jquery-ui-slider-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/plugins/woocommerce/assets/js/jquery-ui-touch-punch/jquery-ui-touch-punch.min.js?ver=8.2.1" id="wc-jquery-ui-touchpunch-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/plugins/woocommerce/assets/js/accounting/accounting.min.js?ver=0.4.2" id="accounting-js" defer></script>
+<script type="text/javascript" id="wc-price-slider-js-extra">
+/* <![CDATA[ */
+var woocommerce_price_slider_params = {"currency_format_num_decimals":"0","currency_format_symbol":"\u20ab","currency_format_decimal_sep":".","currency_format_thousand_sep":",","currency_format":"%v%s"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://givasolar.com/wp-content/plugins/woocommerce/assets/js/frontend/price-slider.min.js?ver=8.2.1" id="wc-price-slider-js" defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="wpsp-script-frontend"></script>
+			<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://givasolar.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+</body>
+</html>
